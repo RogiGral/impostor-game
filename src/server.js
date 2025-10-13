@@ -25,16 +25,17 @@ io.on('connection', (socket) => {
     });
 
     socket.on('joinRoom', (room) => {
-        const roomExists = io.sockets.adapter.rooms.has(room);
+    const roomExists = io.sockets.adapter.rooms.has(room);
 
-        if (roomExists) {
-            socket.join(room);
-            console.log(`Socket ${socket.id} joined room: ${room}`);
-            socket.emit('roomJoined', room);
-        } else {
-            socket.emit('errorMessage', 'Room does not exist.');
-        }
-    });
+    if (roomExists) {
+        socket.join(room);
+        console.log(`Socket ${socket.id} joined room: ${room}`);
+        socket.to(room).emit('userJoined', `A new user has joined the room: ${socket.id}`);
+        socket.emit('roomJoined', room);
+    } else {
+        socket.emit('errorMessage', 'Room does not exist.');
+    }
+});
 
     console.log('A user connected:', socket.id);
 

@@ -8,6 +8,7 @@
     <h1>Socket.IO Rooms</h1>
 
     <div>
+        <input type="text" id="username" placeholder="Enter your name" />
         <input type="text" id="roomName" placeholder="Enter room name" />
         <button onclick="createRoom()">Create Room</button>
         <button onclick="joinRoom()">Join Room</button>
@@ -15,38 +16,46 @@
 
     <div id="status"></div>
 
-    <script>
-        const socket = io();
+<script>
+    const socket = io();
 
-        socket.on('connect', () => {
-            console.log('Connected with ID:', socket.id);
-        });
+    socket.on('connect', () => {
+        console.log('Connected to server with ID:', socket.id);
+    });
 
-        socket.on('roomCreated', (room) => {
-            document.getElementById('status').innerText = `Room "${room}" created and joined.`;
-        });
+    socket.on('roomCreated', (room) => {
+        document.getElementById('status').innerText = `Room "${room}" created and joined.`;
+    });
 
-        socket.on('roomJoined', (room) => {
-            document.getElementById('status').innerText = `Joined room "${room}".`;
-        });
+    socket.on('roomJoined', (room) => {
+        document.getElementById('status').innerText = `You joined room "${room}".`;
+    });
 
-        socket.on('errorMessage', (msg) => {
-            document.getElementById('status').innerText = `Error: ${msg}`;
-        });
+    socket.on('userJoined', (msg) => {
+        const p = document.createElement('p');
+        p.innerText = msg;
+        document.body.appendChild(p);
+    });
 
-        function createRoom() {
-            const room = document.getElementById('roomName').value.trim();
-            if (room) {
-                socket.emit('createRoom', room);
-            }
+    socket.on('errorMessage', (msg) => {
+        document.getElementById('status').innerText = `Error: ${msg}`;
+    });
+
+    function createRoom() {
+        const name = document.getElementById('username').value.trim();
+        const room = document.getElementById('roomName').value.trim();
+        if (room && name) {
+            socket.emit('createRoom', { room, name });
         }
+    }
 
-        function joinRoom() {
-            const room = document.getElementById('roomName').value.trim();
-            if (room) {
-                socket.emit('joinRoom', room);
-            }
+    function joinRoom() {
+        const name = document.getElementById('username').value.trim();
+        const room = document.getElementById('roomName').value.trim();
+        if (room && name) {
+            socket.emit('joinRoom', { room, name });
         }
-    </script>
+    }
+</script>
 </body>
 </html>
