@@ -6,10 +6,36 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Serve static files if needed
 app.use(express.static('public'));
 
 io.on('connection', (socket) => {
+
+    socket.on('createRoom', (room) => {
+        if (!room) return;
+
+        const rooms = Array.from(io.sockets.adapter.rooms.keys());
+
+        if (rooms.includes(room)) {
+            socket.emit('errorMessage', 'Room already exists.');
+        } else {
+            socket.join(room);
+            console.log(`Socket ${socket.id} created and joined room: ${room}`);
+            socket.emit('roomCreated', room);
+        }
+    });
+
+    socket.on('joinRoom', (room) => {
+        const roomExists = io.sockets.adapter.rooms.has(room);
+
+        if (roomExists) {
+            socket.join(room);
+            console.log(`Socket ${socket.id} joined room: ${room}`);
+            socket.emit('roomJoined', room);
+        } else {
+            socket.emit('errorMessage', 'Room does not exist.');
+        }
+    });
+
     console.log('A user connected:', socket.id);
 
     socket.on('disconnect', () => {

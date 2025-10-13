@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Socket.IO Client</title>
+    <title>Socket.IO Room Example</title>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
 <body>
-    <h1>Socket.IO Client Connected</h1>
+    <h1>Socket.IO Rooms</h1>
+
+    <div>
+        <input type="text" id="roomName" placeholder="Enter room name" />
+        <button onclick="createRoom()">Create Room</button>
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+
+    <div id="status"></div>
+
     <script>
-        const socket = io('http://localhost:3000');
+        const socket = io('http://localhost:3000'); // Adjust if deploying elsewhere
 
         socket.on('connect', () => {
-            console.log('Connected to server. Socket ID:', socket.id);
+            console.log('Connected with ID:', socket.id);
         });
 
-        socket.on('disconnect', () => {
-            console.log('Disconnected from server.');
+        socket.on('roomCreated', (room) => {
+            document.getElementById('status').innerText = `Room "${room}" created and joined.`;
         });
+
+        socket.on('roomJoined', (room) => {
+            document.getElementById('status').innerText = `Joined room "${room}".`;
+        });
+
+        socket.on('errorMessage', (msg) => {
+            document.getElementById('status').innerText = `Error: ${msg}`;
+        });
+
+        function createRoom() {
+            const room = document.getElementById('roomName').value.trim();
+            if (room) {
+                socket.emit('createRoom', room);
+            }
+        }
+
+        function joinRoom() {
+            const room = document.getElementById('roomName').value.trim();
+            if (room) {
+                socket.emit('joinRoom', room);
+            }
+        }
     </script>
 </body>
 </html>
