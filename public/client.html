@@ -16,7 +16,7 @@
     <div id="status"></div>
 
     <script>
-        const socket = io('http://localhost:3000'); // Adjust if deploying elsewhere
+        const socket = io();
 
         socket.on('connect', () => {
             console.log('Connected with ID:', socket.id);
