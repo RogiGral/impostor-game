@@ -2,98 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Socket.IO Room Example</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #f8f9fa;
-        color: #333;
-        text-align: center;
-        margin-top: 40px;
-      }
-
-      h1 {
-        color: #007bff;
-      }
-
-      input,
-      button {
-        padding: 10px;
-        margin: 5px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-      }
-
-      button {
-        background: #007bff;
-        color: white;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background: #0056b3;
-      }
-
-      #status {
-        margin-top: 20px;
-        font-weight: bold;
-      }
-
-      #messages {
-        margin-top: 30px;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-      }
-
-      #messages p {
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 8px;
-        border-radius: 6px;
-      }
-
-      #userCount {
-        display: inline-block;
-        margin-left: 10px;
-        font-weight: bold;
-        color: #007bff;
-      }
-
-      #controls {
-        margin-bottom: 10px;
-      }
-      #controls input,
-      #controls button {
-        width: 220px; /* same width for inputs and buttons */
-        box-sizing: border-box; /* ensures padding/border included in width */
-      }
-    </style>
   </head>
   <body>
     <h1>Impostor Game - made by Igor</h1>
 
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 20px;
-      "
-    >
-      <!-- Left: controls and messages -->
-      <div>
-        <div
-          id="controls"
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-          "
-        >
+    <div class="container">
+      <div class="content-area">
+        <div id="controls">
           <input type="text" id="username" placeholder="Enter your name" />
           <input type="text" id="roomName" placeholder="Enter room code" />
           <button id="createBtn" onclick="createRoom()">Create Room</button>
@@ -111,14 +30,13 @@
           </button>
         </div>
 
-        <div id="status" style="margin-top: 20px"></div>
-        <div id="messages" style="margin-top: 20px; max-width: 400px"></div>
+        <div id="status"></div>
+        <div id="messages"></div>
       </div>
 
-      <!-- Right: player list -->
-      <div style="width: 200px; text-align: left">
+      <div class="player-list">
         <h3>Players in Room</h3>
-        <ul id="playerList" style="list-style: none; padding: 0"></ul>
+        <ul id="playerList"></ul>
       </div>
     </div>
 
