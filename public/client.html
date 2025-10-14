@@ -1,61 +1,190 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
     <title>Socket.IO Room Example</title>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-</head>
-<body>
-    <h1>Socket.IO Rooms</h1>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        color: #333;
+        text-align: center;
+        margin-top: 40px;
+      }
 
-    <div>
-        <input type="text" id="username" placeholder="Enter your name" />
-        <input type="text" id="roomName" placeholder="Enter room name" />
-        <button onclick="createRoom()">Create Room</button>
-        <button onclick="joinRoom()">Join Room</button>
+      h1 {
+        color: #007bff;
+      }
+
+      input,
+      button {
+        padding: 10px;
+        margin: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      #status {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      #messages {
+        margin-top: 30px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      #messages p {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 8px;
+        border-radius: 6px;
+      }
+
+      #userCount {
+        display: inline-block;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Impostor Game - made by Igor</h1>
+
+    <div id="controls">
+      <input type="text" id="roomName" placeholder="Enter room code" />
+      <button id="createBtn" onclick="createRoom()">Create Room</button>
+      <button id="joinBtn" onclick="joinRoom()">Join Room</button>
+      <span id="userCount" style="display: none">Users: 0</span>
+      <button id="copyBtn" onclick="copyCode()" style="display: none">
+        Copy Code
+      </button>
+      <button id="leaveBtn" onclick="disconnectRoom()" style="display: none">
+        Leave Room
+      </button>
     </div>
 
     <div id="status"></div>
+    <div id="messages"></div>
 
-<script>
-    const socket = io();
+    <script>
+      const socket = io();
 
-    socket.on('connect', () => {
-        console.log('Connected to server with ID:', socket.id);
-    });
+      const statusDiv = document.getElementById("status");
+      const messagesDiv = document.getElementById("messages");
 
-    socket.on('roomCreated', (room) => {
-        document.getElementById('status').innerText = `Room "${room}" created and joined.`;
-    });
+      const createBtn = document.getElementById("createBtn");
+      const joinBtn = document.getElementById("joinBtn");
+      const leaveBtn = document.getElementById("leaveBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const roomInput = document.getElementById("roomName");
+      const userCount = document.getElementById("userCount");
 
-    socket.on('roomJoined', (room) => {
-        document.getElementById('status').innerText = `You joined room "${room}".`;
-    });
-
-    socket.on('userJoined', (msg) => {
-        const p = document.createElement('p');
+      function log(msg) {
+        const p = document.createElement("p");
         p.innerText = msg;
-        document.body.appendChild(p);
-    });
+        messagesDiv.appendChild(p);
+      }
 
-    socket.on('errorMessage', (msg) => {
-        document.getElementById('status').innerText = `Error: ${msg}`;
-    });
+      function clearMessages() {
+        messagesDiv.innerHTML = "";
+      }
 
-    function createRoom() {
-        const name = document.getElementById('username').value.trim();
-        const room = document.getElementById('roomName').value.trim();
-        if (room && name) {
-            socket.emit('createRoom', { room, name });
+      function showRoomControls(inRoom) {
+        if (inRoom) {
+          createBtn.style.display = "none";
+          joinBtn.style.display = "none";
+          copyBtn.style.display = "inline-block";
+          leaveBtn.style.display = "inline-block";
+          userCount.style.display = "inline-block";
+          roomInput.disabled = true;
+        } else {
+          createBtn.style.display = "inline-block";
+          joinBtn.style.display = "inline-block";
+          copyBtn.style.display = "none";
+          leaveBtn.style.display = "none";
+          userCount.style.display = "none";
+          userCount.innerText = "Users: 0";
+          roomInput.disabled = false;
+          roomInput.value = "";
         }
-    }
+      }
 
-    function joinRoom() {
-        const name = document.getElementById('username').value.trim();
-        const room = document.getElementById('roomName').value.trim();
-        if (room && name) {
-            socket.emit('joinRoom', { room, name });
-        }
-    }
-</script>
-</body>
+      socket.on("connect", () => {
+        log(`Connected: ${socket.id}`);
+        showRoomControls(false);
+      });
+
+      socket.on("roomCreated", (room) => {
+        statusDiv.innerText = `Room "${room}" created. Share this code.`;
+        roomInput.value = room;
+        showRoomControls(true);
+      });
+
+      socket.on("roomJoined", (room) => {
+        statusDiv.innerText = `You joined room "${room}".`;
+        roomInput.value = room;
+        showRoomControls(true);
+      });
+
+      socket.on("leftRoom", (room) => {
+        statusDiv.innerText = `You left room "${room}".`;
+        clearMessages();
+        showRoomControls(false);
+      });
+
+      socket.on("userJoined", (msg) => log(msg));
+      socket.on("userLeft", (msg) => log(msg));
+
+      socket.on("roomCount", (count) => {
+        userCount.style.display = "inline-block";
+        userCount.innerText = `Users: ${count}`;
+      });
+
+      socket.on("roomClosed", (room) => {
+        log(`Room "${room}" closed (no users).`);
+        clearMessages();
+        showRoomControls(false);
+      });
+
+      socket.on("errorMessage", (msg) => {
+        statusDiv.innerText = `❌ ${msg}`;
+      });
+
+      function createRoom() {
+        socket.emit("createRoom");
+      }
+
+      function joinRoom() {
+        const room = roomInput.value.trim();
+        if (room) socket.emit("joinRoom", room);
+      }
+
+      function disconnectRoom() {
+        socket.emit("disconnectRoom");
+      }
+
+      function copyCode() {
+        const code = roomInput.value;
+        navigator.clipboard.writeText(code).then(() => {
+          statusDiv.innerText = `✅ Copied code: ${code}`;
+        });
+      }
+    </script>
+  </body>
 </html>
