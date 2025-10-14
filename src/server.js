@@ -13,8 +13,6 @@ function generateRoomCode() {
 }
 
 io.on("connection", (socket) => {
-  console.log("🟢 A user connected:", socket.id);
-
   function updateRoomCount(roomCode) {
     const room = io.sockets.adapter.rooms.get(roomCode);
     const count = room ? room.size : 0;
@@ -44,7 +42,6 @@ io.on("connection", (socket) => {
     socket.join(roomCode);
     socket.data.room = roomCode;
     socket.data.username = username;
-    console.log(`${username} (${socket.id}) created room ${roomCode}`);
     socket.emit("roomCreated", roomCode);
     updateRoomCount(roomCode);
     emitPlayerList(roomCode);
@@ -60,8 +57,6 @@ io.on("connection", (socket) => {
     socket.join(room);
     socket.data.room = room;
     socket.data.username = username;
-
-    console.log(`${username} (${socket.id}) joined room ${room}`);
     socket.to(room).emit("userJoined", `${username} joined the room.`);
     socket.emit("roomJoined", room);
 
@@ -78,7 +73,6 @@ io.on("connection", (socket) => {
     }
 
     socket.leave(roomCode);
-    console.log(`🚪 Socket ${socket.id} left room ${roomCode}`);
     socket.to(roomCode).emit("userLeft", `User ${socket.id} left the room.`);
 
     socket.data.room = null;
@@ -91,17 +85,12 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     const roomCode = socket.data.room;
     if (roomCode) {
-      console.log(`🔴 User ${socket.id} disconnected from room ${roomCode}`);
       socket.to(roomCode).emit("userLeft", `User ${socket.id} disconnected.`);
       setTimeout(() => updateRoomCount(roomCode), 100);
       emitPlayerList(roomCode);
-    } else {
-      console.log(`User ${socket.id} disconnected (not in room).`);
     }
   });
 });
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`🚀 Server listening on http://localhost:${PORT}`);
-});
+server.listen(PORT, () => {});
