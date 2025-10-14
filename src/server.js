@@ -8,7 +8,6 @@ const io = new Server(server);
 
 app.use(express.static("public"));
 
-// ✅ Helper: Generate random 4-digit room codes
 function generateRoomCode() {
   return Math.floor(1000 + Math.random() * 9000).toString();
 }
@@ -16,65 +15,60 @@ function generateRoomCode() {
 io.on("connection", (socket) => {
   console.log("🟢 A user connected:", socket.id);
 
-  // ✅ Helper: Count and emit number of users in a room
   function updateRoomCount(roomCode) {
     const room = io.sockets.adapter.rooms.get(roomCode);
     const count = room ? room.size : 0;
 
     if (count === 0) {
       console.log(`❌ Room ${roomCode} closed (empty).`);
-      io.emit("roomClosed", roomCode);
     } else {
       io.to(roomCode).emit("roomCount", count);
     }
   }
 
-  // ✅ Create a new room with a random 4-digit code
-  socket.on("createRoom", () => {
+  function emitPlayerList(roomCode) {
+    const room = io.sockets.adapter.rooms.get(roomCode);
+    if (!room) return;
+
+    const players = [];
+    room.forEach((socketId) => {
+      const s = io.sockets.sockets.get(socketId);
+      if (s?.data.username) players.push(s.data.username);
+    });
+
+    io.to(roomCode).emit("updatePlayers", players);
+  }
+
+  socket.on("createRoom", (username) => {
     const roomCode = generateRoomCode();
-
-    // Check if the generated room already exists (rare)
-    if (io.sockets.adapter.rooms.has(roomCode)) {
-      socket.emit("errorMessage", "Room code conflict, please try again.");
-      return;
-    }
-
     socket.join(roomCode);
     socket.data.room = roomCode;
-
-    console.log(`🆕 Socket ${socket.id} created room ${roomCode}`);
+    socket.data.username = username;
+    console.log(`${username} (${socket.id}) created room ${roomCode}`);
     socket.emit("roomCreated", roomCode);
     updateRoomCount(roomCode);
+    emitPlayerList(roomCode);
   });
 
-  // ✅ Join existing room
-  socket.on("joinRoom", (roomCode) => {
-    if (!roomCode) {
-      socket.emit("errorMessage", "Please enter a room code.");
-      return;
-    }
-
-    const room = io.sockets.adapter.rooms.get(roomCode);
-    if (!room) {
+  socket.on("joinRoom", ({ room, username }) => {
+    const roomExists = io.sockets.adapter.rooms.get(room);
+    if (!roomExists) {
       socket.emit("errorMessage", "Room does not exist.");
       return;
     }
 
-    socket.join(roomCode);
-    socket.data.room = roomCode;
+    socket.join(room);
+    socket.data.room = room;
+    socket.data.username = username;
 
-    console.log(`👤 Socket ${socket.id} joined room ${roomCode}`);
+    console.log(`${username} (${socket.id}) joined room ${room}`);
+    socket.to(room).emit("userJoined", `${username} joined the room.`);
+    socket.emit("roomJoined", room);
 
-    // Notify others
-    socket
-      .to(roomCode)
-      .emit("userJoined", `User ${socket.id} joined the room.`);
-    socket.emit("roomJoined", roomCode);
-
-    updateRoomCount(roomCode);
+    updateRoomCount(room);
+    emitPlayerList(room);
   });
 
-  // ✅ Leave room manually
   socket.on("disconnectRoom", () => {
     const roomCode = socket.data.room;
 
@@ -90,19 +84,17 @@ io.on("connection", (socket) => {
     socket.data.room = null;
 
     updateRoomCount(roomCode);
+    emitPlayerList(roomCode);
     socket.emit("leftRoom", roomCode);
   });
 
-  // ✅ When user disconnects (browser closed or connection lost)
   socket.on("disconnect", () => {
     const roomCode = socket.data.room;
-
     if (roomCode) {
       console.log(`🔴 User ${socket.id} disconnected from room ${roomCode}`);
       socket.to(roomCode).emit("userLeft", `User ${socket.id} disconnected.`);
-
-      // Allow time for socket.io to process the disconnection
       setTimeout(() => updateRoomCount(roomCode), 100);
+      emitPlayerList(roomCode);
     } else {
       console.log(`User ${socket.id} disconnected (not in room).`);
     }

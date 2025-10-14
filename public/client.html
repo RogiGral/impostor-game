@@ -61,26 +61,66 @@
         font-weight: bold;
         color: #007bff;
       }
+
+      #controls {
+        margin-bottom: 10px;
+      }
+      #controls input,
+      #controls button {
+        width: 220px; /* same width for inputs and buttons */
+        box-sizing: border-box; /* ensures padding/border included in width */
+      }
     </style>
   </head>
   <body>
     <h1>Impostor Game - made by Igor</h1>
 
-    <div id="controls">
-      <input type="text" id="roomName" placeholder="Enter room code" />
-      <button id="createBtn" onclick="createRoom()">Create Room</button>
-      <button id="joinBtn" onclick="joinRoom()">Join Room</button>
-      <span id="userCount" style="display: none">Users: 0</span>
-      <button id="copyBtn" onclick="copyCode()" style="display: none">
-        Copy Code
-      </button>
-      <button id="leaveBtn" onclick="disconnectRoom()" style="display: none">
-        Leave Room
-      </button>
-    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      "
+    >
+      <!-- Left: controls and messages -->
+      <div>
+        <div
+          id="controls"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <input type="text" id="username" placeholder="Enter your name" />
+          <input type="text" id="roomName" placeholder="Enter room code" />
+          <button id="createBtn" onclick="createRoom()">Create Room</button>
+          <button id="joinBtn" onclick="joinRoom()">Join Room</button>
+          <span id="userCount" style="display: none">Users: 0</span>
+          <button id="copyBtn" onclick="copyCode()" style="display: none">
+            Copy Code
+          </button>
+          <button
+            id="leaveBtn"
+            onclick="disconnectRoom()"
+            style="display: none"
+          >
+            Leave Room
+          </button>
+        </div>
 
-    <div id="status"></div>
-    <div id="messages"></div>
+        <div id="status" style="margin-top: 20px"></div>
+        <div id="messages" style="margin-top: 20px; max-width: 400px"></div>
+      </div>
+
+      <!-- Right: player list -->
+      <div style="width: 200px; text-align: left">
+        <h3>Players in Room</h3>
+        <ul id="playerList" style="list-style: none; padding: 0"></ul>
+      </div>
+    </div>
 
     <script>
       const socket = io();
@@ -88,12 +128,14 @@
       const statusDiv = document.getElementById("status");
       const messagesDiv = document.getElementById("messages");
 
+      const usernameInput = document.getElementById("username");
+      const roomInput = document.getElementById("roomName");
       const createBtn = document.getElementById("createBtn");
       const joinBtn = document.getElementById("joinBtn");
       const leaveBtn = document.getElementById("leaveBtn");
       const copyBtn = document.getElementById("copyBtn");
-      const roomInput = document.getElementById("roomName");
       const userCount = document.getElementById("userCount");
+      const playerList = document.getElementById("playerList");
 
       function log(msg) {
         const p = document.createElement("p");
@@ -112,6 +154,7 @@
           copyBtn.style.display = "inline-block";
           leaveBtn.style.display = "inline-block";
           userCount.style.display = "inline-block";
+          usernameInput.disabled = true;
           roomInput.disabled = true;
         } else {
           createBtn.style.display = "inline-block";
@@ -120,6 +163,7 @@
           leaveBtn.style.display = "none";
           userCount.style.display = "none";
           userCount.innerText = "Users: 0";
+          usernameInput.disabled = false;
           roomInput.disabled = false;
           roomInput.value = "";
         }
@@ -145,6 +189,7 @@
       socket.on("leftRoom", (room) => {
         statusDiv.innerText = `You left room "${room}".`;
         clearMessages();
+        updatePlayerList([]);
         showRoomControls(false);
       });
 
@@ -156,23 +201,44 @@
         userCount.innerText = `Users: ${count}`;
       });
 
-      socket.on("roomClosed", (room) => {
-        log(`Room "${room}" closed (no users).`);
-        clearMessages();
-        showRoomControls(false);
-      });
-
       socket.on("errorMessage", (msg) => {
         statusDiv.innerText = `❌ ${msg}`;
       });
 
+      function updatePlayerList(players) {
+        playerList.innerHTML = "";
+        players.forEach((name) => {
+          const li = document.createElement("li");
+          li.innerText = name;
+          playerList.appendChild(li);
+        });
+      }
+
+      socket.on("updatePlayers", (players) => {
+        updatePlayerList(players);
+      });
+
       function createRoom() {
-        socket.emit("createRoom");
+        const username = usernameInput.value.trim();
+        if (!username) {
+          statusDiv.innerText = "❌ Please enter your name first.";
+          return;
+        }
+        socket.emit("createRoom", username);
       }
 
       function joinRoom() {
+        const username = usernameInput.value.trim();
         const room = roomInput.value.trim();
-        if (room) socket.emit("joinRoom", room);
+        if (!username) {
+          statusDiv.innerText = "❌ Please enter your name first.";
+          return;
+        }
+        if (!room) {
+          statusDiv.innerText = "❌ Please enter room code.";
+          return;
+        }
+        socket.emit("joinRoom", { room, username });
       }
 
       function disconnectRoom() {
