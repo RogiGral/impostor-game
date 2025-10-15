@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Socket.IO Room Example</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Impostor Game - made by Igor</title>
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script defer src="js/client.js"></script>
   </head>
   <body>
     <h1>Impostor Game - made by Igor</h1>
@@ -15,159 +16,25 @@
         <div id="controls">
           <input type="text" id="username" placeholder="Enter your name" />
           <input type="text" id="roomName" placeholder="Enter room code" />
-          <button id="createBtn" onclick="createRoom()">Create Room</button>
-          <button id="joinBtn" onclick="joinRoom()">Join Room</button>
-          <span id="userCount" style="display: none">Users: 0</span>
-          <button id="copyBtn" onclick="copyCode()" style="display: none">
-            Copy Code
-          </button>
-          <button
-            id="leaveBtn"
-            onclick="disconnectRoom()"
-            style="display: none"
-          >
-            Leave Room
+          <button id="createBtn">Utwórz pokój</button>
+          <button id="joinBtn">Dołącz do pokoju</button>
+          <span id="userCount" style="display: none">Gracze: 0</span>
+          <button id="copyBtn" style="display: none">Skopiuj kod</button>
+          <button id="leaveBtn" style="display: none">Opuszcz pokój</button>
+          <button id="startGameBtn" style="display: none">
+            Rozpocznij grę
           </button>
         </div>
+        <button id="nextRoundBtn" style="display: none">Następna runda</button>
 
         <div id="status"></div>
         <div id="messages"></div>
       </div>
 
       <div class="player-list">
-        <h3>Players in Room</h3>
+        <h3>Gracze w pokoju</h3>
         <ul id="playerList"></ul>
       </div>
     </div>
-
-    <script>
-      const socket = io();
-
-      const statusDiv = document.getElementById("status");
-      const messagesDiv = document.getElementById("messages");
-
-      const usernameInput = document.getElementById("username");
-      const roomInput = document.getElementById("roomName");
-      const createBtn = document.getElementById("createBtn");
-      const joinBtn = document.getElementById("joinBtn");
-      const leaveBtn = document.getElementById("leaveBtn");
-      const copyBtn = document.getElementById("copyBtn");
-      const userCount = document.getElementById("userCount");
-      const playerList = document.getElementById("playerList");
-
-      function log(msg) {
-        const p = document.createElement("p");
-        p.innerText = msg;
-        messagesDiv.appendChild(p);
-      }
-
-      function clearMessages() {
-        messagesDiv.innerHTML = "";
-      }
-
-      function showRoomControls(inRoom) {
-        if (inRoom) {
-          createBtn.style.display = "none";
-          joinBtn.style.display = "none";
-          copyBtn.style.display = "inline-block";
-          leaveBtn.style.display = "inline-block";
-          userCount.style.display = "inline-block";
-          usernameInput.disabled = true;
-          roomInput.disabled = true;
-        } else {
-          createBtn.style.display = "inline-block";
-          joinBtn.style.display = "inline-block";
-          copyBtn.style.display = "none";
-          leaveBtn.style.display = "none";
-          userCount.style.display = "none";
-          userCount.innerText = "Users: 0";
-          usernameInput.disabled = false;
-          roomInput.disabled = false;
-          roomInput.value = "";
-        }
-      }
-
-      socket.on("connect", () => {
-        showRoomControls(false);
-      });
-
-      socket.on("roomCreated", (room) => {
-        statusDiv.innerText = `Room "${room}" created. Share this code.`;
-        roomInput.value = room;
-        showRoomControls(true);
-      });
-
-      socket.on("roomJoined", (room) => {
-        statusDiv.innerText = `You joined room "${room}".`;
-        roomInput.value = room;
-        showRoomControls(true);
-      });
-
-      socket.on("leftRoom", (room) => {
-        statusDiv.innerText = `You left room "${room}".`;
-        clearMessages();
-        updatePlayerList([]);
-        showRoomControls(false);
-      });
-
-      socket.on("userJoined", (msg) => log(msg));
-      socket.on("userLeft", (msg) => log(msg));
-
-      socket.on("roomCount", (count) => {
-        userCount.style.display = "inline-block";
-        userCount.innerText = `Users: ${count}`;
-      });
-
-      socket.on("errorMessage", (msg) => {
-        statusDiv.innerText = `❌ ${msg}`;
-      });
-
-      function updatePlayerList(players) {
-        playerList.innerHTML = "";
-        players.forEach((name) => {
-          const li = document.createElement("li");
-          li.innerText = name;
-          playerList.appendChild(li);
-        });
-      }
-
-      socket.on("updatePlayers", (players) => {
-        updatePlayerList(players);
-      });
-
-      function createRoom() {
-        const username = usernameInput.value.trim();
-        if (!username) {
-          statusDiv.innerText = "❌ Please enter your name first.";
-          return;
-        }
-        socket.emit("createRoom", username);
-      }
-
-      function joinRoom() {
-        const username = usernameInput.value.trim();
-        const room = roomInput.value.trim();
-        if (!username) {
-          statusDiv.innerText = "❌ Please enter your name first.";
-          return;
-        }
-        if (!room) {
-          statusDiv.innerText = "❌ Please enter room code.";
-          return;
-        }
-        socket.emit("joinRoom", { room, username });
-      }
-
-      function disconnectRoom() {
-        socket.emit("disconnectRoom");
-      }
-
-      function copyCode() {
-        const code = roomInput.value;
-        navigator.clipboard.writeText(code).then(() => {
-          statusDiv.innerText = `✅ Copied code: ${code}`;
-        });
-      }
-    </script>
   </body>
 </html>
