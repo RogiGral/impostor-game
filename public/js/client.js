@@ -97,10 +97,7 @@ socket.on("gameStarted", ({ role, secretWord, admin }) => {
   clearMessages();
   isAdmin = admin;
   if (role === "impostor") {
-    updateStatus(
-      "🕵️ Jesteś IMPOSTOREM! Staraj się nie zdradzić! Twoja podpowiedź to: " +
-        hintWord
-    );
+    updateStatus("🕵️ Jesteś IMPOSTOREM! Staraj się nie zdradzić!");
   } else {
     updateStatus(`🔒 Tajne hasło: ${secretWord}`);
   }

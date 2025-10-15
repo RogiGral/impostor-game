@@ -131,24 +131,14 @@ function registerSocketHandlers(io) {
       const impostorSocket = players[impostorIndex];
 
       const words = ["Pizza", "Deszcz", "Samolot", "Ocean", "Góra", "Księżyc"];
-      const hintWords = [
-        "Jedzenie",
-        "Pogoda",
-        "Transport",
-        "Woda",
-        "Przyroda",
-        "Kosmos",
-      ];
-      const number = Math.floor(Math.random() * words.length);
-      const secretWord = words[number];
-      const hintWord = hintWords[number];
+      const secretWord = words[Math.floor(Math.random() * words.length)];
 
       gameState[roomCode].impostor = impostorSocket.id;
 
       players.forEach((p) => {
         p.emit("gameStarted", {
           role: p.id === impostorSocket.id ? "impostor" : "citizen",
-          secretWord: p.id === impostorSocket.id ? hintWord : secretWord,
+          secretWord: p.id === impostorSocket.id ? null : secretWord,
           admin: p.data.isAdmin,
         });
       });
