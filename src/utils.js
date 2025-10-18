@@ -73,10 +73,6 @@ function startNewRound(io, roomCode, players, gameState) {
     round: gameState[roomCode].round,
     firstSpeaker: firstSpeaker.data.username,
   });
-
-  console.log(
-    `🎮 Round ${gameState[roomCode].round} in ${roomCode}. Impostor: ${impostorSocket.data.username}`
-  );
 }
 
 module.exports = {
