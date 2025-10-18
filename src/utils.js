@@ -31,8 +31,69 @@ function emitPlayerList(io, roomCode) {
   io.to(roomCode).emit("updatePlayers", players);
 }
 
+const words = [
+  "Pizza",
+  "Deszcz",
+  "Samolot",
+  "Ocean",
+  "Góra",
+  "Księżyc",
+  "Las",
+  "Pustynia",
+];
+const hintWords = [
+  "Jedzenie",
+  "Pogoda",
+  "Transport",
+  "Woda",
+  "Wysokość",
+  "Noc",
+  "Drzewa",
+  "Sucho",
+];
+
+function getRandomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getRandomWordAndHint() {
+  const index = Math.floor(Math.random() * words.length);
+  const secret = words[index];
+  const hint = hintWords[index];
+  return { secret, hint };
+}
+
+function startNewRound(io, roomCode, players, gameState) {
+  if (!gameState[roomCode]) gameState[roomCode] = { players: [], round: 0 };
+  gameState[roomCode].round += 1;
+  gameState[roomCode].players = players.map((p) => p.data.username);
+
+  const { secret, hint } = getRandomWordAndHint();
+  const impostorSocket = getRandomElement(players);
+  gameState[roomCode].impostor = impostorSocket.id;
+
+  players.forEach((p) => {
+    p.emit("gameStarted", {
+      role: p.id === impostorSocket.id ? "impostor" : "citizen",
+      secretWord: p.id === impostorSocket.id ? hint : secret,
+      admin: p.data.isAdmin,
+    });
+  });
+
+  const firstSpeaker = getRandomElement(players);
+  io.to(roomCode).emit("newRound", {
+    round: gameState[roomCode].round,
+    firstSpeaker: firstSpeaker.data.username,
+  });
+
+  console.log(
+    `🎮 Round ${gameState[roomCode].round} in ${roomCode}. Impostor: ${impostorSocket.data.username}`
+  );
+}
+
 module.exports = {
   generateRoomCode,
   updateRoomCount,
   emitPlayerList,
+  startNewRound,
 };

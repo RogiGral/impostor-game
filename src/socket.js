@@ -2,6 +2,7 @@ const {
   generateRoomCode,
   updateRoomCount,
   emitPlayerList,
+  startNewRound,
 } = require("./utils.js");
 
 function registerSocketHandlers(io) {
@@ -72,44 +73,19 @@ function registerSocketHandlers(io) {
       const roomCode = socket.data.room;
       if (!roomCode) return;
       if (!socket.data.isAdmin) {
-        socket.emit("errorMessage", "Only the admin can start the game.");
-        return;
+        return socket.emit(
+          "errorMessage",
+          "Only the admin can start the game."
+        );
       }
 
       const room = io.sockets.adapter.rooms.get(roomCode);
       if (!room || room.size < 3) {
-        socket.emit(
-          "errorMessage",
-          "At least 3 players are required to start the game."
-        );
-        return;
+        return socket.emit("errorMessage", "At least 3 players are required.");
       }
 
       const players = Array.from(room).map((id) => io.sockets.sockets.get(id));
-      const impostorIndex = Math.floor(Math.random() * players.length);
-      const impostorSocket = players[impostorIndex];
-      const secretWord = "Banana"; // later randomize
-
-      gameState[roomCode] = { round: 0, impostor: impostorSocket.id };
-
-      players.forEach((p) => {
-        p.emit("gameStarted", {
-          role: p.id === impostorSocket.id ? "impostor" : "citizen",
-          secretWord: p.id === impostorSocket.id ? null : secretWord,
-          admin: p.data.isAdmin,
-        });
-      });
-
-      const firstSpeaker = players[Math.floor(Math.random() * players.length)];
-      gameState[roomCode].round = 1;
-      io.to(roomCode).emit("newRound", {
-        round: 1,
-        firstSpeaker: firstSpeaker.data.username,
-      });
-
-      console.log(
-        `🎮 Game started in ${roomCode}. Impostor: ${impostorSocket.data.username}`
-      );
+      startNewRound(io, roomCode, players, gameState);
     });
 
     socket.on("nextRound", () => {
@@ -120,39 +96,7 @@ function registerSocketHandlers(io) {
       if (!room) return;
 
       const players = Array.from(room).map((id) => io.sockets.sockets.get(id));
-
-      if (!gameState[roomCode]) gameState[roomCode] = { round: 0 };
-
-      gameState[roomCode].round++;
-
-      const nextRound = gameState[roomCode].round;
-
-      const impostorIndex = Math.floor(Math.random() * players.length);
-      const impostorSocket = players[impostorIndex];
-
-      const words = ["Pizza", "Deszcz", "Samolot", "Ocean", "Góra", "Księżyc"];
-      const secretWord = words[Math.floor(Math.random() * words.length)];
-
-      gameState[roomCode].impostor = impostorSocket.id;
-
-      players.forEach((p) => {
-        p.emit("gameStarted", {
-          role: p.id === impostorSocket.id ? "impostor" : "citizen",
-          secretWord: p.id === impostorSocket.id ? null : secretWord,
-          admin: p.data.isAdmin,
-        });
-      });
-
-      const firstSpeaker = players[Math.floor(Math.random() * players.length)];
-
-      io.to(roomCode).emit("newRound", {
-        round: nextRound,
-        firstSpeaker: firstSpeaker.data.username,
-      });
-
-      console.log(
-        `🔁 New round ${nextRound} in room ${roomCode}. Impostor: ${impostorSocket.data.username}`
-      );
+      startNewRound(io, roomCode, players, gameState);
     });
   });
 }
