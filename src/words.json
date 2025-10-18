@@ -1,0 +1,402 @@
+[
+  {
+    "word": "granica",
+    "hint": "kraj"
+  },
+  {
+    "word": "wąż",
+    "hint": "zwierzę"
+  },
+  {
+    "word": "włóczęga",
+    "hint": "podróżnik"
+  },
+  {
+    "word": "dzwonki",
+    "hint": "dźwięk"
+  },
+  {
+    "word": "direction",
+    "hint": "kierunek"
+  },
+  {
+    "word": "wymiana",
+    "hint": "handel"
+  },
+  {
+    "word": "przemysł",
+    "hint": "fabryka"
+  },
+  {
+    "word": "pustynia",
+    "hint": "piasek"
+  },
+  {
+    "word": "gotować",
+    "hint": "kuchnia"
+  },
+  {
+    "word": "zegar",
+    "hint": "czas"
+  },
+  {
+    "word": "gwizdek",
+    "hint": "dźwięk"
+  },
+  {
+    "word": "koronka",
+    "hint": "tkanina"
+  },
+  {
+    "word": "kredyt",
+    "hint": "bank"
+  },
+  {
+    "word": "pęknięcie",
+    "hint": "uszkodzenie"
+  },
+  {
+    "word": "dochód",
+    "hint": "pieniądze"
+  },
+  {
+    "word": "wiedza",
+    "hint": "nauka"
+  },
+  {
+    "word": "lotnisko",
+    "hint": "samolot"
+  },
+  {
+    "word": "pomarańczowy",
+    "hint": "kolor"
+  },
+  {
+    "word": "kopalnia",
+    "hint": "węgiel"
+  },
+  {
+    "word": "krem",
+    "hint": "skóra"
+  },
+  {
+    "word": "hydrant",
+    "hint": "woda"
+  },
+  {
+    "word": "ramię",
+    "hint": "ciało"
+  },
+  {
+    "word": "osioł",
+    "hint": "zwierzę"
+  },
+  {
+    "word": "rejs",
+    "hint": "statek"
+  },
+  {
+    "word": "stołówka",
+    "hint": "jedzenie"
+  },
+  {
+    "word": "ciągnąć",
+    "hint": "ruch"
+  },
+  {
+    "word": "masło",
+    "hint": "nabiał"
+  },
+  {
+    "word": "notatnik",
+    "hint": "pisanie"
+  },
+  {
+    "word": "chodnik",
+    "hint": "ulica"
+  },
+  {
+    "word": "krowa",
+    "hint": "zwierzę"
+  },
+  {
+    "word": "terytorium",
+    "hint": "obszar"
+  },
+  {
+    "word": "kreatura",
+    "hint": "postać"
+  },
+  {
+    "word": "pokwitowanie",
+    "hint": "rachunek"
+  },
+  {
+    "word": "zabawka",
+    "hint": "dziecko"
+  },
+  {
+    "word": "oko",
+    "hint": "twarz"
+  },
+  {
+    "word": "garnek",
+    "hint": "gotowanie"
+  },
+  {
+    "word": "rozmowa",
+    "hint": "dialog"
+  },
+  {
+    "word": "winda",
+    "hint": "budynek"
+  },
+  {
+    "word": "ostrze",
+    "hint": "nóż"
+  },
+  {
+    "word": "człowiek",
+    "hint": "osoba"
+  },
+  {
+    "word": "list",
+    "hint": "poczta"
+  },
+  {
+    "word": "kształt",
+    "hint": "forma"
+  },
+  {
+    "word": "basen",
+    "hint": "woda"
+  },
+  {
+    "word": "oszust",
+    "hint": "kłamca"
+  },
+  {
+    "word": "wartość",
+    "hint": "liczba"
+  },
+  {
+    "word": "mleko",
+    "hint": "napój"
+  },
+  {
+    "word": "żyrafa",
+    "hint": "zwierzę"
+  },
+  {
+    "word": "ryba",
+    "hint": "woda"
+  },
+  {
+    "word": "gospodarstwo rolne",
+    "hint": "wieś"
+  },
+  {
+    "word": "śmiech",
+    "hint": "radość"
+  },
+  {
+    "word": "ptactwo",
+    "hint": "ptaki"
+  },
+  {
+    "word": "zawody",
+    "hint": "praca"
+  },
+  {
+    "word": "wojna",
+    "hint": "konflikt"
+  },
+  {
+    "word": "rower",
+    "hint": "transport"
+  },
+  {
+    "word": "odpoczynek",
+    "hint": "relaks"
+  },
+  {
+    "word": "gorąco",
+    "hint": "pogoda"
+  },
+  {
+    "word": "węże",
+    "hint": "zwierzęta"
+  },
+  {
+    "word": "gęś",
+    "hint": "ptak"
+  },
+  {
+    "word": "limit",
+    "hint": "granica"
+  },
+  {
+    "word": "wsparcie",
+    "hint": "pomoc"
+  },
+  {
+    "word": "kąpiel",
+    "hint": "woda"
+  },
+  {
+    "word": "rzeka",
+    "hint": "woda"
+  },
+  {
+    "word": "kurczak",
+    "hint": "jedzenie"
+  },
+  {
+    "word": "oferta",
+    "hint": "handel"
+  },
+  {
+    "word": "żaba",
+    "hint": "zwierzę"
+  },
+  {
+    "word": "biznes",
+    "hint": "firma"
+  },
+  {
+    "word": "żaby",
+    "hint": "zwierzęta"
+  },
+  {
+    "word": "słowo",
+    "hint": "język"
+  },
+  {
+    "word": "komfort",
+    "hint": "wygoda"
+  },
+  {
+    "word": "hamulec",
+    "hint": "samochód"
+  },
+  {
+    "word": "owoc",
+    "hint": "jedzenie"
+  },
+  {
+    "word": "nasionko",
+    "hint": "roślina"
+  },
+  {
+    "word": "korzeń",
+    "hint": "roślina"
+  },
+  {
+    "word": "pokój",
+    "hint": "dom"
+  },
+  {
+    "word": "prześcieradło",
+    "hint": "łóżko"
+  },
+  {
+    "word": "kurtyna",
+    "hint": "teatr"
+  },
+  {
+    "word": "jabłka",
+    "hint": "owoc"
+  },
+  {
+    "word": "fikcja",
+    "hint": "literatura"
+  },
+  {
+    "word": "niewolnik",
+    "hint": "praca"
+  },
+  {
+    "word": "śródmieście",
+    "hint": "miasto"
+  },
+  {
+    "word": "twarz",
+    "hint": "człowiek"
+  },
+  {
+    "word": "bańka",
+    "hint": "powietrze"
+  },
+  {
+    "word": "kosz",
+    "hint": "śmieci"
+  },
+  {
+    "word": "sól",
+    "hint": "kuchnia"
+  },
+  {
+    "word": "godzina",
+    "hint": "czas"
+  },
+  {
+    "word": "grabie",
+    "hint": "ogród"
+  },
+  {
+    "word": "ranek",
+    "hint": "dzień"
+  },
+  {
+    "word": "wiersz",
+    "hint": "poezja"
+  },
+  {
+    "word": "granica",
+    "hint": "kraj"
+  },
+  {
+    "word": "pogoda",
+    "hint": "niebo"
+  },
+  {
+    "word": "stop",
+    "hint": "znak"
+  },
+  {
+    "word": "łóżka",
+    "hint": "sen"
+  },
+  {
+    "word": "klejnot",
+    "hint": "biżuteria"
+  },
+  {
+    "word": "patelnia",
+    "hint": "gotowanie"
+  },
+  {
+    "word": "aktywność",
+    "hint": "ruch"
+  },
+  {
+    "word": "srebro",
+    "hint": "metal"
+  },
+  {
+    "word": "śniadanie",
+    "hint": "jedzenie"
+  },
+  {
+    "word": "kukurydza",
+    "hint": "roślina"
+  },
+  {
+    "word": "koniczyna",
+    "hint": "szczęście"
+  },
+  {
+    "word": "trawa",
+    "hint": "ogród"
+  }
+]

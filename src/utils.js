@@ -31,35 +31,23 @@ function emitPlayerList(io, roomCode) {
   io.to(roomCode).emit("updatePlayers", players);
 }
 
-const words = [
-  "Pizza",
-  "Deszcz",
-  "Samolot",
-  "Ocean",
-  "Góra",
-  "Księżyc",
-  "Las",
-  "Pustynia",
-];
-const hintWords = [
-  "Jedzenie",
-  "Pogoda",
-  "Transport",
-  "Woda",
-  "Wysokość",
-  "Noc",
-  "Drzewa",
-  "Sucho",
-];
-
 function getRandomElement(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function loadWordsFromFile() {
+  const fs = require("fs");
+  const data = fs.readFileSync("src/words.json", "utf-8");
+  const words = JSON.parse(data);
+  return { words };
+}
+
 function getRandomWordAndHint() {
+  const { words } = loadWordsFromFile();
+  console.log(words);
   const index = Math.floor(Math.random() * words.length);
-  const secret = words[index];
-  const hint = hintWords[index];
+  const secret = words[index].word;
+  const hint = words[index].hint;
   return { secret, hint };
 }
 
