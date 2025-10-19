@@ -44,7 +44,6 @@ function loadWordsFromFile() {
 
 function getRandomWordAndHint() {
   const { words } = loadWordsFromFile();
-  console.log(words);
   const index = Math.floor(Math.random() * words.length);
   const secret = words[index].word;
   const hint = words[index].hint;

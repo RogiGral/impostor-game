@@ -75,13 +75,16 @@ function registerSocketHandlers(io) {
       if (!socket.data.isAdmin) {
         return socket.emit(
           "errorMessage",
-          "Only the admin can start the game."
+          "Tylko administrator może rozpocząć grę."
         );
       }
 
       const room = io.sockets.adapter.rooms.get(roomCode);
-      if (!room || room.size < 3) {
-        return socket.emit("errorMessage", "At least 3 players are required.");
+      if (!room || room.size < 1) {
+        return socket.emit(
+          "errorMessage",
+          "Wymagane jest co najmniej 3 graczy."
+        );
       }
 
       const players = Array.from(room).map((id) => io.sockets.sockets.get(id));

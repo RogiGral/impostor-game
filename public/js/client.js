@@ -5,6 +5,10 @@ let currentRound = 0;
 
 // DOM elements
 const statusDiv = document.getElementById("status");
+const gameStatusDiv = document.getElementById("gameStatus");
+const clickGameStatusDiv = document.getElementById("clickGameStatus");
+
+const checkbox = document.getElementById("btnControl");
 const messagesDiv = document.getElementById("messages");
 const usernameInput = document.getElementById("username");
 const roomInput = document.getElementById("roomName");
@@ -32,6 +36,11 @@ function updateStatus(msg, isError = false) {
   statusDiv.innerText = isError ? `❌ ${msg}` : msg;
 }
 
+function updateGameStatus(msg) {
+  gameStatusDiv.style.color = checkbox.checked ? "whitesmoke" : "black";
+  gameStatusDiv.innerText = msg;
+}
+
 function showRoomControls(inRoom) {
   createBtn.style.display = inRoom ? "none" : "inline-block";
   joinBtn.style.display = inRoom ? "none" : "inline-block";
@@ -39,6 +48,7 @@ function showRoomControls(inRoom) {
   leaveBtn.style.display = inRoom ? "inline-block" : "none";
   userCount.style.display = inRoom ? "inline-block" : "none";
   startGameBtn.style.display = inRoom ? "inline-block" : "none";
+  gameStatusDiv.style.display = inRoom ? "block" : "none";
 
   usernameInput.disabled = inRoom;
   roomInput.disabled = inRoom;
@@ -97,12 +107,14 @@ socket.on("gameStarted", ({ role, secretWord, admin }) => {
   clearMessages();
   isAdmin = admin;
   if (role === "impostor") {
-    updateStatus(
-      "🕵️ Jesteś IMPOSTOREM! Staraj się nie zdradzić! Twoja podpowiedź to: " +
+    updateStatus("");
+    updateGameStatus(
+      "Jesteś IMPOSTOREM! Staraj się nie zdradzić! Twoja podpowiedź to: " +
         secretWord
     );
   } else {
-    updateStatus(`🔒 Tajne hasło: ${secretWord}`);
+    updateStatus("");
+    updateGameStatus(`Tajne hasło: ${secretWord}`);
   }
   document.getElementById("controls").style.display = "none";
   if (isAdmin) {
@@ -148,4 +160,10 @@ startGameBtn.addEventListener("click", () => {
 });
 nextRoundBtn.addEventListener("click", () => {
   socket.emit("nextRound");
+});
+
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+  } else {
+  }
 });
