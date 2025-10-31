@@ -1,4 +1,9 @@
-const socket = io();
+const socket = io({
+  reconnection: true,
+  reconnectionAttempts: Infinity,
+  reconnectionDelay: 1000,
+  reconnectionDelayMax: 5000,
+});
 
 let isAdmin = false;
 let currentRound = 0;
@@ -130,6 +135,19 @@ socket.on("firstSpeaker", ({ username }) => {
   log(`🎤 ${username} zaczyna dyskusję!`);
 });
 
+socket.on("connect_error", () => {
+  updateStatus("🔄 Reconnecting…");
+});
+socket.on("reconnect", () => {
+  updateStatus("✅ Reconnected");
+  if (roomInput.value) {
+    socket.emit("joinRoom", {
+      room: roomInput.value,
+      username: usernameInput.value,
+    });
+  }
+});
+
 // --- BUTTON HANDLERS ---
 createBtn.addEventListener("click", () => {
   const username = usernameInput.value.trim();
@@ -165,5 +183,12 @@ nextRoundBtn.addEventListener("click", () => {
 checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
   } else {
+  }
+});
+
+document.addEventListener("visibilitychange", () => {
+  console.log("Visibility changed:", document.visibilityState);
+  if (document.visibilityState === "visible" && !socket.connected) {
+    socket.connect();
   }
 });

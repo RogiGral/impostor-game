@@ -1,402 +1,398 @@
 [
   {
     "word": "granica",
-    "hint": "kraj"
+    "hint": "Wyznaczenie"
   },
   {
     "word": "wąż",
-    "hint": "zwierzę"
+    "hint": "Skradanie"
   },
   {
     "word": "włóczęga",
-    "hint": "podróżnik"
+    "hint": "Bez celu"
   },
   {
     "word": "dzwonki",
-    "hint": "dźwięk"
+    "hint": "Choinka"
   },
   {
     "word": "direction",
-    "hint": "kierunek"
+    "hint": "Kompas"
   },
   {
     "word": "wymiana",
-    "hint": "handel"
+    "hint": "Równowaga"
   },
   {
     "word": "przemysł",
-    "hint": "fabryka"
+    "hint": "Rozwój"
   },
   {
     "word": "pustynia",
-    "hint": "piasek"
+    "hint": "Cisza"
   },
   {
     "word": "gotować",
-    "hint": "kuchnia"
+    "hint": "Transformacja"
   },
   {
     "word": "zegar",
-    "hint": "czas"
+    "hint": "Tikanie"
   },
   {
     "word": "gwizdek",
-    "hint": "dźwięk"
+    "hint": "Arbiter"
   },
   {
     "word": "koronka",
-    "hint": "tkanina"
+    "hint": "Delikatność"
   },
   {
     "word": "kredyt",
-    "hint": "bank"
+    "hint": "Zaufanie"
   },
   {
     "word": "pęknięcie",
-    "hint": "uszkodzenie"
+    "hint": "Słabość"
   },
   {
     "word": "dochód",
-    "hint": "pieniądze"
+    "hint": "Podstawa"
   },
   {
     "word": "wiedza",
-    "hint": "nauka"
+    "hint": "Latarnia"
   },
   {
     "word": "lotnisko",
-    "hint": "samolot"
+    "hint": "Odlot"
   },
   {
-    "word": "pomarańczowy",
-    "hint": "kolor"
+    "word": "pomarańcza",
+    "hint": "Cytrus"
   },
   {
     "word": "kopalnia",
-    "hint": "węgiel"
+    "hint": "Głębia"
   },
   {
     "word": "krem",
-    "hint": "skóra"
+    "hint": "Ochrona"
   },
   {
     "word": "hydrant",
-    "hint": "woda"
+    "hint": "Czerwony"
   },
   {
     "word": "ramię",
-    "hint": "ciało"
+    "hint": "Siła"
   },
   {
     "word": "osioł",
-    "hint": "zwierzę"
+    "hint": "Uporność"
   },
   {
     "word": "rejs",
-    "hint": "statek"
+    "hint": "Horyzont"
   },
   {
     "word": "stołówka",
-    "hint": "jedzenie"
+    "hint": "Wspólnota"
   },
   {
     "word": "ciągnąć",
-    "hint": "ruch"
+    "hint": "Linia"
   },
   {
     "word": "masło",
-    "hint": "nabiał"
+    "hint": "Kanapka"
   },
   {
     "word": "notatnik",
-    "hint": "pisanie"
+    "hint": "Pomysły"
   },
   {
     "word": "chodnik",
-    "hint": "ulica"
+    "hint": "Przechodzień"
   },
   {
     "word": "krowa",
-    "hint": "zwierzę"
+    "hint": "Trawa"
   },
   {
     "word": "terytorium",
-    "hint": "obszar"
+    "hint": "Własność"
   },
   {
     "word": "kreatura",
-    "hint": "postać"
+    "hint": "Wyobraźnia"
   },
   {
     "word": "pokwitowanie",
-    "hint": "rachunek"
+    "hint": "Dowód"
   },
   {
     "word": "zabawka",
-    "hint": "dziecko"
+    "hint": "Radość"
   },
   {
     "word": "oko",
-    "hint": "twarz"
+    "hint": "Lustro"
   },
   {
     "word": "garnek",
-    "hint": "gotowanie"
+    "hint": "Naczynie"
   },
   {
     "word": "rozmowa",
-    "hint": "dialog"
+    "hint": "Wymiana"
   },
   {
     "word": "winda",
-    "hint": "budynek"
+    "hint": "Góra"
   },
   {
     "word": "ostrze",
-    "hint": "nóż"
+    "hint": "Precyzja"
   },
   {
     "word": "człowiek",
-    "hint": "osoba"
+    "hint": "Społeczeństwo"
   },
   {
     "word": "list",
-    "hint": "poczta"
+    "hint": "Czekanie"
   },
   {
     "word": "kształt",
-    "hint": "forma"
+    "hint": "Geometryczny"
   },
   {
     "word": "basen",
-    "hint": "woda"
+    "hint": "Rekreacja"
   },
   {
     "word": "oszust",
-    "hint": "kłamca"
+    "hint": "Maska"
   },
   {
     "word": "wartość",
-    "hint": "liczba"
+    "hint": "Znaczenie"
   },
   {
     "word": "mleko",
-    "hint": "napój"
+    "hint": "Biały"
   },
   {
     "word": "żyrafa",
-    "hint": "zwierzę"
+    "hint": "Wysokość"
   },
   {
     "word": "ryba",
-    "hint": "woda"
+    "hint": "Sieć"
   },
   {
     "word": "gospodarstwo rolne",
-    "hint": "wieś"
+    "hint": "Żniwa"
   },
   {
     "word": "śmiech",
-    "hint": "radość"
+    "hint": "Dźwięk"
   },
   {
     "word": "ptactwo",
-    "hint": "ptaki"
+    "hint": "Skrzydła"
   },
   {
     "word": "zawody",
-    "hint": "praca"
+    "hint": "Kariera"
   },
   {
     "word": "wojna",
-    "hint": "konflikt"
+    "hint": "Historia"
   },
   {
     "word": "rower",
-    "hint": "transport"
+    "hint": "Pedał"
   },
   {
     "word": "odpoczynek",
-    "hint": "relaks"
+    "hint": "Cisza"
   },
   {
     "word": "gorąco",
-    "hint": "pogoda"
+    "hint": "Para"
   },
   {
     "word": "węże",
-    "hint": "zwierzęta"
+    "hint": "Zmiennocieplne"
   },
   {
     "word": "gęś",
-    "hint": "ptak"
+    "hint": "Pióro"
   },
   {
     "word": "limit",
-    "hint": "granica"
+    "hint": "Ograniczenie"
   },
   {
     "word": "wsparcie",
-    "hint": "pomoc"
+    "hint": "Ramię"
   },
   {
     "word": "kąpiel",
-    "hint": "woda"
+    "hint": "Piana"
   },
   {
     "word": "rzeka",
-    "hint": "woda"
+    "hint": "Przepływ"
   },
   {
     "word": "kurczak",
-    "hint": "jedzenie"
+    "hint": "Drób"
   },
   {
     "word": "oferta",
-    "hint": "handel"
+    "hint": "Propozycja"
   },
   {
     "word": "żaba",
-    "hint": "zwierzę"
-  },
-  {
-    "word": "biznes",
-    "hint": "firma"
+    "hint": "Skakanie"
   },
   {
     "word": "żaby",
-    "hint": "zwierzęta"
+    "hint": "Amfibie"
   },
   {
     "word": "słowo",
-    "hint": "język"
+    "hint": "Komunikacja"
   },
   {
     "word": "komfort",
-    "hint": "wygoda"
+    "hint": "Miękkość"
   },
   {
     "word": "hamulec",
-    "hint": "samochód"
+    "hint": "Zatrzymanie"
   },
   {
     "word": "owoc",
-    "hint": "jedzenie"
+    "hint": "Pestka"
   },
   {
     "word": "nasionko",
-    "hint": "roślina"
+    "hint": "Początek"
   },
   {
     "word": "korzeń",
-    "hint": "roślina"
+    "hint": "Podstawa"
   },
   {
     "word": "pokój",
-    "hint": "dom"
+    "hint": "Czwarta ściana"
   },
   {
     "word": "prześcieradło",
-    "hint": "łóżko"
+    "hint": "Białe"
   },
   {
     "word": "kurtyna",
-    "hint": "teatr"
+    "hint": "Zasłona"
   },
   {
     "word": "jabłka",
-    "hint": "owoc"
+    "hint": "Eden"
   },
   {
     "word": "fikcja",
-    "hint": "literatura"
+    "hint": "Zmyślenie"
   },
   {
     "word": "niewolnik",
-    "hint": "praca"
+    "hint": "Wolność"
   },
   {
     "word": "śródmieście",
-    "hint": "miasto"
+    "hint": "Centrum"
   },
   {
     "word": "twarz",
-    "hint": "człowiek"
+    "hint": "Ekspresja"
   },
   {
     "word": "bańka",
-    "hint": "powietrze"
+    "hint": "Pękanie"
   },
   {
     "word": "kosz",
-    "hint": "śmieci"
+    "hint": "Rzut"
   },
   {
     "word": "sól",
-    "hint": "kuchnia"
+    "hint": "Smak"
   },
   {
     "word": "godzina",
-    "hint": "czas"
+    "hint": "Wskazówki"
   },
   {
     "word": "grabie",
-    "hint": "ogród"
+    "hint": "Ząbki"
   },
   {
     "word": "ranek",
-    "hint": "dzień"
+    "hint": "Świt"
   },
   {
     "word": "wiersz",
-    "hint": "poezja"
+    "hint": "Rytm"
   },
   {
     "word": "granica",
-    "hint": "kraj"
+    "hint": "Linia"
   },
   {
     "word": "pogoda",
-    "hint": "niebo"
+    "hint": "Prognoza"
   },
   {
     "word": "stop",
-    "hint": "znak"
+    "hint": "Czerwony"
   },
   {
     "word": "łóżka",
-    "hint": "sen"
+    "hint": "Materac"
   },
   {
     "word": "klejnot",
-    "hint": "biżuteria"
+    "hint": "Blask"
   },
   {
     "word": "patelnia",
-    "hint": "gotowanie"
+    "hint": "Smażenie"
   },
   {
     "word": "aktywność",
-    "hint": "ruch"
+    "hint": "Energia"
   },
   {
     "word": "srebro",
-    "hint": "metal"
+    "hint": "Lśnienie"
   },
   {
     "word": "śniadanie",
-    "hint": "jedzenie"
+    "hint": "Poranek"
   },
   {
     "word": "kukurydza",
-    "hint": "roślina"
+    "hint": "Ziarno"
   },
   {
     "word": "koniczyna",
-    "hint": "szczęście"
+    "hint": "Trzy"
   },
   {
     "word": "trawa",
-    "hint": "ogród"
+    "hint": "Zieleń"
   }
 ]
