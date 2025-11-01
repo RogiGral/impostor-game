@@ -108,8 +108,18 @@ socket.on("errorMessage", (msg) => updateStatus(msg, true));
 
 socket.on("updatePlayers", updatePlayerList);
 
-socket.on("gameStarted", ({ role, secretWord, admin }) => {
+socket.on("gameStarted", async ({ role, secretWord, admin }) => {
   document.querySelector(".flip-card").style.display = "block";
+
+  if ("wakeLock" in navigator) {
+    try {
+      const wakeLock = await navigator.wakeLock.request("screen");
+      console.log("Wake Lock aktywny!");
+    } catch (err) {
+      console.error(`${err.name}, ${err.message}`);
+    }
+  }
+
   clearMessages();
   isAdmin = admin;
   if (role === "impostor") {
