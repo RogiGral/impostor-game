@@ -7,7 +7,7 @@ function updateRoomCount(io, roomCode) {
   const count = room ? room.size : 0;
 
   if (count === 0) {
-    console.log(`❌ Room ${roomCode} closed (empty).`);
+    console.log(`❌ Pokój ${roomCode} zamknięty (pusty).`);
   } else {
     io.to(roomCode).emit("roomCount", count);
   }
@@ -60,6 +60,7 @@ function startNewRound(io, roomCode, players, gameState) {
   gameState[roomCode].impostor = impostorSocket.id;
 
   players.forEach((p) => {
+    p.emit("flipCard");
     p.emit("gameStarted", {
       role: p.id === impostorSocket.id ? "impostor" : "citizen",
       secretWord: p.id === impostorSocket.id ? hint : secret,

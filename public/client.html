@@ -28,7 +28,15 @@
         <button id="nextRoundBtn" style="display: none">Następna runda</button>
         <div id="status"></div>
         <input type="checkbox" id="btnControl" />
-        <label class="btn" for="btnControl"><div id="gameStatus"></div></label>
+        <div id="status"></div>
+        <input type="checkbox" id="btnControl" style="display: none" />
+
+        <label class="flip-card" for="btnControl">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" id="gameStatus"></div>
+            <div class="flip-card-back">Kliknij, aby odsłonić swoją rolę!</div>
+          </div>
+        </label>
         <div id="messages"></div>
       </div>
 

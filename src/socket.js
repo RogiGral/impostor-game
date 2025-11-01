@@ -7,7 +7,7 @@ const {
 
 function registerSocketHandlers(io) {
   io.on("connection", (socket) => {
-    console.log(`⚡ New client connected: ${socket.id}`);
+    console.log(`⚡ Nowy klient: ${socket.id}`);
 
     socket.on("createRoom", (username) => {
       const roomCode = generateRoomCode();
@@ -23,7 +23,7 @@ function registerSocketHandlers(io) {
     socket.on("joinRoom", ({ room, username }) => {
       const roomExists = io.sockets.adapter.rooms.get(room);
       if (!roomExists) {
-        socket.emit("errorMessage", "Room does not exist.");
+        socket.emit("errorMessage", "Podany pokój nie istnieje.");
         return;
       }
 
@@ -31,7 +31,7 @@ function registerSocketHandlers(io) {
       socket.data.room = room;
       socket.data.username = username;
       socket.data.isAdmin = false;
-      socket.to(room).emit("userJoined", `${username} joined the room.`);
+      socket.to(room).emit("userJoined", `${username} dołączył/a do pokoju.`);
       socket.emit("roomJoined", room);
 
       updateRoomCount(io, room);
@@ -41,14 +41,14 @@ function registerSocketHandlers(io) {
     socket.on("disconnectRoom", () => {
       const roomCode = socket.data.room;
       if (!roomCode) {
-        socket.emit("errorMessage", "You are not in any room.");
+        socket.emit("errorMessage", "Nie jesteś w żadnym pokoju.");
         return;
       }
 
       socket.leave(roomCode);
       socket
         .to(roomCode)
-        .emit("userLeft", `User ${socket.data.username} left the room.`);
+        .emit("userLeft", `Użytkownik ${socket.data.username} opuścił pokój.`);
 
       socket.data.room = null;
       updateRoomCount(io, roomCode);
@@ -61,7 +61,7 @@ function registerSocketHandlers(io) {
       if (roomCode) {
         socket
           .to(roomCode)
-          .emit("userLeft", `${socket.data.username} disconnected.`);
+          .emit("userLeft", `${socket.data.username} puścił pokój.`);
         setTimeout(() => updateRoomCount(io, roomCode), 100);
         emitPlayerList(io, roomCode);
       }

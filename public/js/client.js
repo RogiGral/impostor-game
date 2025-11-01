@@ -10,7 +10,7 @@ let currentRound = 0;
 
 // DOM elements
 const statusDiv = document.getElementById("status");
-const gameStatusDiv = document.getElementById("gameStatus");
+const gameStatusDiv = document.querySelector(".flip-card-front");
 const clickGameStatusDiv = document.getElementById("clickGameStatus");
 
 const checkbox = document.getElementById("btnControl");
@@ -42,7 +42,6 @@ function updateStatus(msg, isError = false) {
 }
 
 function updateGameStatus(msg) {
-  gameStatusDiv.style.color = checkbox.checked ? "whitesmoke" : "black";
   gameStatusDiv.innerText = msg;
 }
 
@@ -91,6 +90,7 @@ socket.on("roomJoined", (room) => {
 });
 
 socket.on("leftRoom", (room) => {
+  document.querySelector(".flip-card").style.display = "none";
   updateStatus(`Opuszczono pokój: "${room}".`);
   clearMessages();
   updatePlayerList([]);
@@ -109,17 +109,15 @@ socket.on("errorMessage", (msg) => updateStatus(msg, true));
 socket.on("updatePlayers", updatePlayerList);
 
 socket.on("gameStarted", ({ role, secretWord, admin }) => {
+  document.querySelector(".flip-card").style.display = "block";
   clearMessages();
   isAdmin = admin;
   if (role === "impostor") {
     updateStatus("");
-    updateGameStatus(
-      "Jesteś IMPOSTOREM! Staraj się nie zdradzić! Twoja podpowiedź to: " +
-        secretWord
-    );
+    updateGameStatus(`Jesteś IMPOSTOREM! Twoja podpowiedź to: ${secretWord}`);
   } else {
     updateStatus("");
-    updateGameStatus(`Tajne hasło: ${secretWord}`);
+    updateGameStatus(`Jesteś OBYWATELEM! Twoja hasło to: ${secretWord}`);
   }
   document.getElementById("controls").style.display = "none";
   if (isAdmin) {
@@ -131,21 +129,17 @@ socket.on("newRound", ({ round, firstSpeaker }) => {
   log(`🌀 Runda ${round} rozpoczęta! 🎤 ${firstSpeaker} zaczyna.`);
 });
 
+socket.on("flipCard", () => {
+  checkbox.checked = false;
+});
+
 socket.on("firstSpeaker", ({ username }) => {
   log(`🎤 ${username} zaczyna dyskusję!`);
 });
 
-socket.on("connect_error", () => {
+socket.on("connect_error", (err) => {
+  console.warn("Connection error:", err.message);
   updateStatus("🔄 Reconnecting…");
-});
-socket.on("reconnect", () => {
-  updateStatus("✅ Reconnected");
-  if (roomInput.value) {
-    socket.emit("joinRoom", {
-      room: roomInput.value,
-      username: usernameInput.value,
-    });
-  }
 });
 
 // --- BUTTON HANDLERS ---
@@ -178,12 +172,6 @@ startGameBtn.addEventListener("click", () => {
 });
 nextRoundBtn.addEventListener("click", () => {
   socket.emit("nextRound");
-});
-
-checkbox.addEventListener("change", () => {
-  if (checkbox.checked) {
-  } else {
-  }
 });
 
 document.addEventListener("visibilitychange", () => {
