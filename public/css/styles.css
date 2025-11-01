@@ -1,17 +1,29 @@
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --primary-color: #4a4a4a;
+  --primary-hover: #333;
+  --accent-color: #ffc107;
+  --border-color: #e0e0e0;
+  --impostor-red: #d9534f;
+  --citizen-blue: #0275d8;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  color: #333;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
   text-align: center;
   margin-top: 40px;
   padding: 0 10px;
 }
 
 h1 {
-  color: #007bff;
+  color: var(--primary-color);
   font-size: 1.8rem;
+  font-weight: 700;
 }
-
 h3 {
   margin-top: 0;
 }
@@ -26,13 +38,25 @@ button {
 }
 
 button {
-  background: #007bff;
+  background: var(--primary-color); /* <-- Use variable */
   color: white;
   cursor: pointer;
+  padding: 10px 15px; /* Adjust padding */
+  margin: 5px 0;
+  border-radius: 8px; /* Softer corners */
+  border: none; /* Remove default border */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase; /* Game-like feel */
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease; /* Smooth transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background: #0056b3;
+  background: var(--primary-hover); /* <-- Use variable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 #btnControl {
@@ -51,12 +75,12 @@ button:hover {
 }
 
 #messages p {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 8px;
-  border-radius: 6px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  border-radius: 8px;
   word-wrap: break-word;
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 #userCount {
@@ -88,6 +112,17 @@ button:hover {
   gap: 30px;
   margin-top: 20px;
   flex-wrap: wrap;
+  align-items: flex-start; /* Align cards to the top */
+}
+
+.content-area,
+.player-list {
+  background: var(--card-bg); /* <-- Add white background */
+  border-radius: 12px; /* <-- Softer corners */
+  padding: 20px; /* <-- Add internal spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* <-- Add shadow */
+  border: 1px solid var(--border-color); /* <-- Subtle border */
+  box-sizing: border-box; /* <-- ADD THIS LINE */
 }
 
 .content-area {
@@ -105,13 +140,21 @@ button:hover {
   padding: 0;
 }
 
+#startGameBtn {
+  background-color: var(--citizen-blue);
+  font-weight: 700;
+}
+#leaveBtn {
+  background-color: var(--impostor-red);
+}
+
 .flip-card {
   width: 300px;
   height: 100px;
   perspective: 1000px;
   display: block;
   cursor: pointer;
-  margin: 10px 0;
+  margin: 10px auto;
   display: none;
 }
 
@@ -143,6 +186,11 @@ button:hover {
   box-sizing: border-box;
   font-size: 1.2em;
   font-weight: bold;
+}
+.flip-card-back {
+  background-image: linear-gradient(45deg, #333 0%, #555 100%);
+  color: white;
+  border: 2px solid #333;
 }
 
 .flip-card-front {
