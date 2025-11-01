@@ -206,6 +206,48 @@ button:hover {
   border: 2px solid #777;
 }
 
+/* --- Creator Footer --- */
+
+/* --- Creator Footer --- */
+
+.creator-footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #888;
+  display: flex;
+  flex-direction: column; /* <-- CHANGE THIS */
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* This will now be vertical gap */
+}
+
+/* Style for the Buy Me A Coffee button */
+.coffee-button {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 6px 12px; /* <-- REDUCED PADDING */
+  border-radius: 16px; /* <-- REDUCED RADIUS */
+  border: none;
+  font-size: 0.75rem; /* <-- REDUCED FONT SIZE */
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.coffee-button:hover {
+  background: #ffdb58; /* Slightly lighter yellow on hover */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
 @media (max-width: 600px) {
   .container {
     flex-direction: column;

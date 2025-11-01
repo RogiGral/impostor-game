@@ -15,13 +15,13 @@
     <script defer src="js/client.js"></script>
   </head>
   <body>
-    <h1>Impostor Game - made by Igor</h1>
+    <h1>Impostor Game</h1>
 
     <div class="container">
       <div class="content-area">
         <div id="controls">
-          <input type="text" id="username" placeholder="Enter your name" />
-          <input type="text" id="roomName" placeholder="Enter room code" />
+          <input type="text" id="username" placeholder="Podaj swoje imie" />
+          <input type="text" id="roomName" placeholder="Podaj kod pokoju" />
           <button id="createBtn">Utwórz pokój</button>
           <button id="joinBtn">Dołącz do pokoju</button>
           <span id="userCount" style="display: none">Gracze: 0</span>
@@ -51,5 +51,15 @@
         <ul id="playerList"></ul>
       </div>
     </div>
+    <footer class="creator-footer">
+      Made with ❤️ by Igor
+
+      <button
+        class="coffee-button"
+        onclick="window.open('https://www.suppi.pl/rogigral', '_blank');"
+      >
+        ☕ Buy me a coffee
+      </button>
+    </footer>
   </body>
 </html>
