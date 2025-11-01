@@ -1,398 +1,786 @@
 [
   {
-    "word": "granica",
+    "word": "Granica",
     "hint": "Wyznaczenie"
   },
   {
-    "word": "wąż",
+    "word": "Wąż",
     "hint": "Skradanie"
   },
   {
-    "word": "włóczęga",
+    "word": "Włóczęga",
     "hint": "Bez celu"
   },
   {
-    "word": "dzwonki",
+    "word": "Dzwonki",
     "hint": "Choinka"
   },
   {
-    "word": "direction",
+    "word": "Droga",
     "hint": "Kompas"
   },
   {
-    "word": "wymiana",
+    "word": "Wymiana",
     "hint": "Równowaga"
   },
   {
-    "word": "przemysł",
+    "word": "Przemysł",
     "hint": "Rozwój"
   },
   {
-    "word": "pustynia",
+    "word": "Pustynia",
     "hint": "Cisza"
   },
   {
-    "word": "gotować",
+    "word": "Gotować",
     "hint": "Transformacja"
   },
   {
-    "word": "zegar",
+    "word": "Zegar",
     "hint": "Tikanie"
   },
   {
-    "word": "gwizdek",
+    "word": "Gwizdek",
     "hint": "Arbiter"
   },
   {
-    "word": "koronka",
+    "word": "Koronka",
     "hint": "Delikatność"
   },
   {
-    "word": "kredyt",
+    "word": "Kredyt",
     "hint": "Zaufanie"
   },
   {
-    "word": "pęknięcie",
+    "word": "Pęknięcie",
     "hint": "Słabość"
   },
   {
-    "word": "dochód",
+    "word": "Dochód",
     "hint": "Podstawa"
   },
   {
-    "word": "wiedza",
+    "word": "Wiedza",
     "hint": "Latarnia"
   },
   {
-    "word": "lotnisko",
+    "word": "Lotnisko",
     "hint": "Odlot"
   },
   {
-    "word": "pomarańcza",
+    "word": "Pomarańcza",
     "hint": "Cytrus"
   },
   {
-    "word": "kopalnia",
+    "word": "Kopalnia",
     "hint": "Głębia"
   },
   {
-    "word": "krem",
+    "word": "Krem",
     "hint": "Ochrona"
   },
   {
-    "word": "hydrant",
+    "word": "Hydrant",
     "hint": "Czerwony"
   },
   {
-    "word": "ramię",
+    "word": "Ramię",
     "hint": "Siła"
   },
   {
-    "word": "osioł",
+    "word": "Osioł",
     "hint": "Uporność"
   },
   {
-    "word": "rejs",
+    "word": "Rejs",
     "hint": "Horyzont"
   },
   {
-    "word": "stołówka",
+    "word": "Stołówka",
     "hint": "Wspólnota"
   },
   {
-    "word": "ciągnąć",
+    "word": "Ciągnąć",
     "hint": "Linia"
   },
   {
-    "word": "masło",
+    "word": "Masło",
     "hint": "Kanapka"
   },
   {
-    "word": "notatnik",
+    "word": "Notatnik",
     "hint": "Pomysły"
   },
   {
-    "word": "chodnik",
+    "word": "Chodnik",
     "hint": "Przechodzień"
   },
   {
-    "word": "krowa",
+    "word": "Krowa",
     "hint": "Trawa"
   },
   {
-    "word": "terytorium",
+    "word": "Terytorium",
     "hint": "Własność"
   },
   {
-    "word": "kreatura",
+    "word": "Kreatura",
     "hint": "Wyobraźnia"
   },
   {
-    "word": "pokwitowanie",
+    "word": "Pokwitowanie",
     "hint": "Dowód"
   },
   {
-    "word": "zabawka",
+    "word": "Zabawka",
     "hint": "Radość"
   },
   {
-    "word": "oko",
+    "word": "Oko",
     "hint": "Lustro"
   },
   {
-    "word": "garnek",
+    "word": "Garnek",
     "hint": "Naczynie"
   },
   {
-    "word": "rozmowa",
+    "word": "Rozmowa",
     "hint": "Wymiana"
   },
   {
-    "word": "winda",
+    "word": "Winda",
     "hint": "Góra"
   },
   {
-    "word": "ostrze",
+    "word": "Ostrze",
     "hint": "Precyzja"
   },
   {
-    "word": "człowiek",
+    "word": "Człowiek",
     "hint": "Społeczeństwo"
   },
   {
-    "word": "list",
+    "word": "List",
     "hint": "Czekanie"
   },
   {
-    "word": "kształt",
+    "word": "Kształt",
     "hint": "Geometryczny"
   },
   {
-    "word": "basen",
+    "word": "Basen",
     "hint": "Rekreacja"
   },
   {
-    "word": "oszust",
+    "word": "Oszust",
     "hint": "Maska"
   },
   {
-    "word": "wartość",
+    "word": "Wartość",
     "hint": "Znaczenie"
   },
   {
-    "word": "mleko",
+    "word": "Mleko",
     "hint": "Biały"
   },
   {
-    "word": "żyrafa",
+    "word": "Żyrafa",
     "hint": "Wysokość"
   },
   {
-    "word": "ryba",
+    "word": "Ryba",
     "hint": "Sieć"
   },
   {
-    "word": "gospodarstwo rolne",
+    "word": "Gospodarstwo rolne",
     "hint": "Żniwa"
   },
   {
-    "word": "śmiech",
+    "word": "Śmiech",
     "hint": "Dźwięk"
   },
   {
-    "word": "ptactwo",
+    "word": "Ptactwo",
     "hint": "Skrzydła"
   },
   {
-    "word": "zawody",
+    "word": "Zawody",
     "hint": "Kariera"
   },
   {
-    "word": "wojna",
+    "word": "Wojna",
     "hint": "Historia"
   },
   {
-    "word": "rower",
+    "word": "Rower",
     "hint": "Pedał"
   },
   {
-    "word": "odpoczynek",
+    "word": "Odpoczynek",
     "hint": "Cisza"
   },
   {
-    "word": "gorąco",
+    "word": "Gorąco",
     "hint": "Para"
   },
   {
-    "word": "węże",
+    "word": "Węże",
     "hint": "Zmiennocieplne"
   },
   {
-    "word": "gęś",
+    "word": "Gęś",
     "hint": "Pióro"
   },
   {
-    "word": "limit",
+    "word": "Limit",
     "hint": "Ograniczenie"
   },
   {
-    "word": "wsparcie",
+    "word": "Wsparcie",
     "hint": "Ramię"
   },
   {
-    "word": "kąpiel",
+    "word": "Kąpiel",
     "hint": "Piana"
   },
   {
-    "word": "rzeka",
+    "word": "Rzeka",
     "hint": "Przepływ"
   },
   {
-    "word": "kurczak",
+    "word": "Kurczak",
     "hint": "Drób"
   },
   {
-    "word": "oferta",
+    "word": "Oferta",
     "hint": "Propozycja"
   },
   {
-    "word": "żaba",
+    "word": "Żaba",
     "hint": "Skakanie"
   },
   {
-    "word": "żaby",
+    "word": "Żaby",
     "hint": "Amfibie"
   },
   {
-    "word": "słowo",
+    "word": "Słowo",
     "hint": "Komunikacja"
   },
   {
-    "word": "komfort",
+    "word": "Komfort",
     "hint": "Miękkość"
   },
   {
-    "word": "hamulec",
+    "word": "Hamulec",
     "hint": "Zatrzymanie"
   },
   {
-    "word": "owoc",
+    "word": "Owoc",
     "hint": "Pestka"
   },
   {
-    "word": "nasionko",
+    "word": "Nasionko",
     "hint": "Początek"
   },
   {
-    "word": "korzeń",
+    "word": "Korzeń",
     "hint": "Podstawa"
   },
   {
-    "word": "pokój",
+    "word": "Pokój",
     "hint": "Czwarta ściana"
   },
   {
-    "word": "prześcieradło",
+    "word": "Prześcieradło",
     "hint": "Białe"
   },
   {
-    "word": "kurtyna",
+    "word": "Kurtyna",
     "hint": "Zasłona"
   },
   {
-    "word": "jabłka",
+    "word": "Jabłka",
     "hint": "Eden"
   },
   {
-    "word": "fikcja",
+    "word": "Fikcja",
     "hint": "Zmyślenie"
   },
   {
-    "word": "niewolnik",
+    "word": "Niewolnik",
     "hint": "Wolność"
   },
   {
-    "word": "śródmieście",
+    "word": "Śródmieście",
     "hint": "Centrum"
   },
   {
-    "word": "twarz",
+    "word": "Twarz",
     "hint": "Ekspresja"
   },
   {
-    "word": "bańka",
+    "word": "Bańka",
     "hint": "Pękanie"
   },
   {
-    "word": "kosz",
+    "word": "Kosz",
     "hint": "Rzut"
   },
   {
-    "word": "sól",
+    "word": "Sól",
     "hint": "Smak"
   },
   {
-    "word": "godzina",
+    "word": "Godzina",
     "hint": "Wskazówki"
   },
   {
-    "word": "grabie",
+    "word": "Grabie",
     "hint": "Ząbki"
   },
   {
-    "word": "ranek",
+    "word": "Ranek",
     "hint": "Świt"
   },
   {
-    "word": "wiersz",
+    "word": "Wiersz",
     "hint": "Rytm"
   },
   {
-    "word": "granica",
+    "word": "Granica",
     "hint": "Linia"
   },
   {
-    "word": "pogoda",
+    "word": "Pogoda",
     "hint": "Prognoza"
   },
   {
-    "word": "stop",
+    "word": "Stop",
     "hint": "Czerwony"
   },
   {
-    "word": "łóżka",
+    "word": "Łóżka",
     "hint": "Materac"
   },
   {
-    "word": "klejnot",
+    "word": "Klejnot",
     "hint": "Blask"
   },
   {
-    "word": "patelnia",
+    "word": "Patelnia",
     "hint": "Smażenie"
   },
   {
-    "word": "aktywność",
+    "word": "Aktywność",
     "hint": "Energia"
   },
   {
-    "word": "srebro",
+    "word": "Srebro",
     "hint": "Lśnienie"
   },
   {
-    "word": "śniadanie",
+    "word": "Śniadanie",
     "hint": "Poranek"
   },
   {
-    "word": "kukurydza",
+    "word": "Kukurydza",
     "hint": "Ziarno"
   },
   {
-    "word": "koniczyna",
+    "word": "Koniczyna",
     "hint": "Trzy"
   },
   {
-    "word": "trawa",
+    "word": "Trawa",
     "hint": "Zieleń"
+  },
+  {
+    "word": "Granica",
+    "hint": "Państwa"
+  },
+  {
+    "word": "Wąż",
+    "hint": "Gad"
+  },
+  {
+    "word": "Włóczęga",
+    "hint": "Bez domu"
+  },
+  {
+    "word": "Dzwonki",
+    "hint": "Sanie"
+  },
+  {
+    "word": "Direction",
+    "hint": "Kierunek"
+  },
+  {
+    "word": "Wymiana",
+    "hint": "Handel"
+  },
+  {
+    "word": "Przemysł",
+    "hint": "Fabryka"
+  },
+  {
+    "word": "Pustynia",
+    "hint": "Piasek"
+  },
+  {
+    "word": "Gotować",
+    "hint": "Posiłek"
+  },
+  {
+    "word": "Zegar",
+    "hint": "Czas"
+  },
+  {
+    "word": "Gwizdek",
+    "hint": "Sędzia"
+  },
+  {
+    "word": "Koronka",
+    "hint": "Obrus"
+  },
+  {
+    "word": "Kredyt",
+    "hint": "Bank"
+  },
+  {
+    "word": "Pęknięcie",
+    "hint": "Szyba"
+  },
+  {
+    "word": "Dochód",
+    "hint": "Pieniądze"
+  },
+  {
+    "word": "Wiedza",
+    "hint": "Książki"
+  },
+  {
+    "word": "Lotnisko",
+    "hint": "Samolot"
+  },
+  {
+    "word": "Pomarańcza",
+    "hint": "Owoc"
+  },
+  {
+    "word": "Kopalnia",
+    "hint": "Węgiel"
+  },
+  {
+    "word": "Krem",
+    "hint": "Do twarzy"
+  },
+  {
+    "word": "Hydrant",
+    "hint": "Straż pożarna"
+  },
+  {
+    "word": "Ramię",
+    "hint": "Część ciała"
+  },
+  {
+    "word": "Osioł",
+    "hint": "Zwierzę"
+  },
+  {
+    "word": "Rejs",
+    "hint": "Statek"
+  },
+  {
+    "word": "Stołówka",
+    "hint": "Szkolny obiad"
+  },
+  {
+    "word": "Ciągnąć",
+    "hint": "Pchać lub..."
+  },
+  {
+    "word": "Masło",
+    "hint": "Do chleba"
+  },
+  {
+    "word": "Notatnik",
+    "hint": "Zapiski"
+  },
+  {
+    "word": "Chodnik",
+    "hint": "Ulica"
+  },
+  {
+    "word": "Krowa",
+    "hint": "Mleko"
+  },
+  {
+    "word": "Terytorium",
+    "hint": "Obszar"
+  },
+  {
+    "word": "Kreatura",
+    "hint": "Potwór"
+  },
+  {
+    "word": "Pokwitowanie",
+    "hint": "Paragon"
+  },
+  {
+    "word": "Zabawka",
+    "hint": "Dziecko"
+  },
+  {
+    "word": "Oko",
+    "hint": "Widzenie"
+  },
+  {
+    "word": "Garnek",
+    "hint": "Zupa"
+  },
+  {
+    "word": "Rozmowa",
+    "hint": "Dialog"
+  },
+  {
+    "word": "Winda",
+    "hint": "Piętro"
+  },
+  {
+    "word": "Ostrze",
+    "hint": "Nóż"
+  },
+  {
+    "word": "Człowiek",
+    "hint": "Osoba"
+  },
+  {
+    "word": "List",
+    "hint": "Poczta"
+  },
+  {
+    "word": "Kształt",
+    "hint": "Koło lub kwadrat"
+  },
+  {
+    "word": "Basen",
+    "hint": "Pływanie"
+  },
+  {
+    "word": "Oszust",
+    "hint": "Kłamca"
+  },
+  {
+    "word": "Wartość",
+    "hint": "Cena"
+  },
+  {
+    "word": "Mleko",
+    "hint": "Masło"
+  },
+  {
+    "word": "Żyrafa",
+    "hint": "Długa szyja"
+  },
+  {
+    "word": "Ryba",
+    "hint": "Jezus"
+  },
+  {
+    "word": "Gospodarstwo rolne",
+    "hint": "Krowa"
+  },
+  {
+    "word": "Śmiech",
+    "hint": "Żart"
+  },
+  {
+    "word": "Zawody",
+    "hint": "Praca"
+  },
+  {
+    "word": "Wojna",
+    "hint": "Bitwa"
+  },
+  {
+    "word": "Rower",
+    "hint": "Dwa kółka"
+  },
+  {
+    "word": "Odpoczynek",
+    "hint": "Relaks"
+  },
+  {
+    "word": "Gorąco",
+    "hint": "Ogień"
+  },
+  {
+    "word": "Węże",
+    "hint": "Gady"
+  },
+  {
+    "word": "Gęś",
+    "hint": "Nie Polak"
+  },
+  {
+    "word": "Limit",
+    "hint": "Maksimum"
+  },
+  {
+    "word": "Wsparcie",
+    "hint": "Pomoc"
+  },
+  {
+    "word": "Kąpiel",
+    "hint": "Wanna"
+  },
+  {
+    "word": "Rzeka",
+    "hint": "Brud"
+  },
+  {
+    "word": "Kurczak",
+    "hint": "Rosół"
+  },
+  {
+    "word": "Oferta",
+    "hint": "Sklep"
+  },
+  {
+    "word": "Żaba",
+    "hint": ""
+  },
+  {
+    "word": "Słowo",
+    "hint": "Ze liter"
+  },
+  {
+    "word": "Komfort",
+    "hint": "Wygoda"
+  },
+  {
+    "word": "Hamulec",
+    "hint": "Tomasz Haito"
+  },
+  {
+    "word": "Owoc",
+    "hint": "Jabłko"
+  },
+  {
+    "word": "Nasionko",
+    "hint": "Roślina"
+  },
+  {
+    "word": "Korzeń",
+    "hint": "Drzewo"
+  },
+  {
+    "word": "Pokój",
+    "hint": "Gołąb"
+  },
+  {
+    "word": "Prześcieradło",
+    "hint": "Łóżko"
+  },
+  {
+    "word": "Kurtyna",
+    "hint": "Teatr"
+  },
+  {
+    "word": "Jabłka",
+    "hint": "Newton"
+  },
+  {
+    "word": "Fikcja",
+    "hint": "Nieprawda"
+  },
+  {
+    "word": "Niewolnik",
+    "hint": "Murzyn"
+  },
+  {
+    "word": "Śródmieście",
+    "hint": "Piotrkowska"
+  },
+  {
+    "word": "Twarz",
+    "hint": "Maseczka"
+  },
+  {
+    "word": "Bańka",
+    "hint": "Mydlana"
+  },
+  {
+    "word": "Kosz",
+    "hint": "Na śmieci"
+  },
+  {
+    "word": "Sól",
+    "hint": "Powitanie"
+  },
+  {
+    "word": "Godzina",
+    "hint": "Jednostka"
+  },
+  {
+    "word": "Grabie",
+    "hint": "Liście"
+  },
+  {
+    "word": "Ranek",
+    "hint": "Kawa"
+  },
+  {
+    "word": "Wiersz",
+    "hint": "Poeta"
+  },
+  {
+    "word": "Granica",
+    "hint": "Kraj"
+  },
+  {
+    "word": "Pogoda",
+    "hint": "Wkurwienie"
+  },
+  {
+    "word": "Stop",
+    "hint": "Znak drogowy"
+  },
+  {
+    "word": "Łóżka",
+    "hint": "Do spania"
+  },
+  {
+    "word": "Klejnot",
+    "hint": "Minecraft"
+  },
+  {
+    "word": "Patelnia",
+    "hint": "Kobieta"
+  },
+  {
+    "word": "Aktywność",
+    "hint": "Ruch"
+  },
+  {
+    "word": "Srebro",
+    "hint": "Ząb"
+  },
+  {
+    "word": "Śniadanie",
+    "hint": "Ranek"
+  },
+  {
+    "word": "Kukurydza",
+    "hint": "Popcorn"
+  },
+  {
+    "word": "Koniczyna",
+    "hint": "Czterolistna"
+  },
+  {
+    "word": "Trawa",
+    "hint": "Zielony"
   }
 ]
