@@ -4,6 +4,26 @@
     "hint": "Wyznaczenie"
   },
   {
+    "word": "Kurwa",
+    "hint": "Kajew"
+  },
+  {
+    "word": "Kamasutra",
+    "hint": "Pozycje"
+  },
+  {
+    "word": "Zakonnica",
+    "hint": "Habit"
+  },
+  {
+    "word": "Szmitek",
+    "hint": "Głowa w betoniarce"
+  },
+  {
+    "word": "Teściowa",
+    "hint": "Rodzina"
+  },
+  {
     "word": "Wąż",
     "hint": "Skradanie"
   },
@@ -493,7 +513,7 @@
   },
   {
     "word": "Stołówka",
-    "hint": "Szkolny obiad"
+    "hint": "Jedzenie"
   },
   {
     "word": "Ciągnąć",
@@ -649,7 +669,7 @@
   },
   {
     "word": "Żaba",
-    "hint": ""
+    "hint": "Koń Rafał"
   },
   {
     "word": "Słowo",
@@ -713,11 +733,11 @@
   },
   {
     "word": "Kosz",
-    "hint": "Na śmieci"
+    "hint": "Piłka"
   },
   {
     "word": "Sól",
-    "hint": "Powitanie"
+    "hint": "Powiększenie"
   },
   {
     "word": "Godzina",
@@ -745,11 +765,11 @@
   },
   {
     "word": "Stop",
-    "hint": "Znak drogowy"
+    "hint": "Mandat"
   },
   {
     "word": "Łóżka",
-    "hint": "Do spania"
+    "hint": "Seks"
   },
   {
     "word": "Klejnot",
@@ -761,7 +781,7 @@
   },
   {
     "word": "Aktywność",
-    "hint": "Ruch"
+    "hint": "Seks"
   },
   {
     "word": "Srebro",
@@ -781,6 +801,6 @@
   },
   {
     "word": "Trawa",
-    "hint": "Zielony"
+    "hint": "Zioło"
   }
 ]
