@@ -30,6 +30,7 @@ const nextRoundBtn = document.getElementById("nextRoundBtn");
 function log(msg) {
   const p = document.createElement("p");
   p.innerText = msg;
+  console.log(msg);
   messagesDiv.appendChild(p);
 }
 
@@ -110,6 +111,7 @@ socket.on("updatePlayers", updatePlayerList);
 
 socket.on("gameStarted", async ({ role, secretWord, admin }) => {
   document.querySelector(".flip-card").style.display = "block";
+  clearMessages();
 
   if ("wakeLock" in navigator) {
     try {
@@ -120,7 +122,6 @@ socket.on("gameStarted", async ({ role, secretWord, admin }) => {
     }
   }
 
-  clearMessages();
   isAdmin = admin;
   if (role === "impostor") {
     updateStatus("");
