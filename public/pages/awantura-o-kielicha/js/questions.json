@@ -1,0 +1,89 @@
+[
+  {
+    "label": "Literatura i Książki",
+    "color": "#a52a2a",
+    "questions": [
+      "Jak nazywa się autor książki Mały Książę?",
+      "W której książce pojawia się postać doktora Johna Watsona?",
+      "Jakie zwierzę jest bohaterem książki Bambi?"
+    ]
+  },
+  {
+    "label": "Filmy i Seriale",
+    "color": "#ffa500",
+    "questions": [
+      "Jak nazywa się kultowy serial komediowy o grupie przyjaciół mieszkających w Nowym Jorku?",
+      "W którym filmie Marvela po raz pierwszy pojawiła się postać Czarnej Wdowy (Natasha Romanoff)?",
+      "Jak nazywa się aktorka która zagrała Rose w Titanicu?"
+    ]
+  },
+  {
+    "label": "Znane Cytaty",
+    "color": "#ff1493",
+    "questions": [
+      "Czyj to cytat: Do końca tak nie było. Córka zeżarła kostkę od kibla i trzeba było do szpitala jechać",
+      "Z jakiego filmu pochodzi cytat: Życie jest jak pudełko czekoladek, nigdy nie wiesz, co dostaniesz?"
+    ]
+  },
+  {
+    "label": "Gry Komputerowe i Planszowe",
+    "color": "#32cd32",
+    "questions": [
+      "Z jakiej gry jest ta muzyka?",
+      "W jakiej grze komputerowej gracz wciela się w hydraulika ratującego księżniczkę?",
+      "Jak nazywa się główna bohaterka gry, która jest znana z noszenia krótkich szortów i białego topu?"
+    ]
+  },
+  {
+    "label": "Hity Muzyczne Lat 80., 90., 2000.",
+    "color": "#ff4500",
+    "questions": [
+      "Kto wykonał przebój: I Will Always Love You",
+      "Jaka polska piosenka zaczyna się od tekstu: -Kaśka! Kaśka! -Przestań się drzeć, ja tu serial oglądam! -Może pani poprosić Kaśkę?",
+      "Jak brzmi tytuł piosenki, którą Edyta Górniak zaśpiewała na Konkursie Piosenki Eurowizji w 1994 roku?"
+    ]
+  },
+  {
+    "label": "Kultura Internetu i Memów",
+    "color": "#9370db",
+    "questions": [
+      "Który film z 2004 roku stał się inspiracją do stworzenia mema: This is Sparta?",
+      "Jak brzmi słynny zwrot z mema, który stał się popularny dzięki serialowi The Office i jest używany, by nadać podtekst seksualny do niemal każdej wypowiedzi?"
+    ]
+  },
+  {
+    "label": "Zwierzęta i Przyroda",
+    "color": "#008080",
+    "questions": [
+      "Jakie zwierzęta potrafią latać, ale nie są ptakami, a ich skrzydła to tak naprawdę zmodyfikowane przednie nogi?",
+      "Jakie drzewo jest symbolem Japonii, znane z różowych kwiatów wiosną?",
+      "Więcej niż jedno zwierzę to..."
+    ]
+  },
+  {
+    "label": "Anatomia Człowieka",
+    "color": "#b22222",
+    "questions": [
+      "Jak nazywa się narząd odpowiedzialny za produkcję insuliny?",
+      "Jak nazywa się część ciała, która łączy kości w stawach?"
+    ]
+  },
+  {
+    "label": "Reklamy i Slogany",
+    "color": "#ff6347",
+    "questions": [
+      "Po jaki lek idziemy do Goździkowej?",
+      "Jaki slogan ma firma Red Bull?",
+      "W jakiej reklamie zobaczymy maślanego ludzika?"
+    ]
+  },
+  {
+    "label": "Kuchnia Polska",
+    "color": "#8b4513",
+    "questions": [
+      "Jakie mięso jest tradycyjnie wykorzystywane w Bigosie?",
+      "Którą rybę Polacy najczęściej spożywają na surowo?",
+      "Jaki składnik jest głównym składnikiem zalewajki, którego nie znajdziemy w barszczu białym i żurku?"
+    ]
+  }
+]
