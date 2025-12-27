@@ -1,89 +1,70 @@
 [
   {
-    "label": "Literatura i Książki",
+    "label": "Jaka to melodia",
     "color": "#a52a2a",
     "questions": [
-      "Jak nazywa się autor książki Mały Książę?",
-      "W której książce pojawia się postać doktora Johna Watsona?",
-      "Jakie zwierzę jest bohaterem książki Bambi?"
+      "Rozpoznaj tytuł piosenki po fragmencie: Ruszyłem z belki, garbik, fajeczka, no i poleciało zmierzałem na hel ale zawiało, ląduje w krainie tysiąca bajor...",
+      "Rozpoznaj tytuł piosenki po fragmencie: Nie dzwoń do mnie jeśli nie wiesz o co chodzi. Środek nocy to nie pora na rozmowy. Co chcesz zrobić? Co chcesz zbroić? Chcesz się kłócić, czy chcesz się godzić? Ja nie chce się dochodzić, chce dochodzić! Seks dla przyjemności ale nie myśl, że zarobisz",
+      "Rozpoznaj tytuł piosenki po fragmencie: Człowiek jest tylko sumą oddechów, wiec nie mów mi, że jest jakiś inny sposób. Chciałbym coś wiedzieć teraz na pewno, to moja udręka to jej sedno. Wiem tylko, że wszystko się zmienia, coś jest, a później tego nie ma"
     ]
   },
   {
-    "label": "Filmy i Seriale",
+    "label": "Kto to powiedział?",
     "color": "#ffa500",
     "questions": [
-      "Jak nazywa się kultowy serial komediowy o grupie przyjaciół mieszkających w Nowym Jorku?",
-      "W którym filmie Marvela po raz pierwszy pojawiła się postać Czarnej Wdowy (Natasha Romanoff)?",
-      "Jak nazywa się aktorka która zagrała Rose w Titanicu?"
+      "Halo policja! Tak, Policja w Żarach. Proszę Pana mówi….Lipinki łużyckie. Łączna 43. Łączna tutaj jak się wjeżdża, zaraz koło poczty objazd TUTAJ. ZGŁASZAM. Wybuch, styrte ktoś nam podpalił styrte. Co podpalił? Nie wiem kto… – jak się nazywała Pani zgłaszająca incydent?",
+      "To jest jakaś masakra? W ogólne na prawo jazdy czeka się 3 tygodnie i ja mówię przepraszam ale ja jestem …. A Pani mówi że ma mnie w dupie czy jestem…, Kwaśniewski czy Jan Paweł II. – kto to powiedział?",
+      "Dawno temu też zaufałem pewnej kobiecie. Wtedy dałbym sobie za nią rękę uciąć. I wiesz co? I bym teraz kurwa nie miał ręki.– jest to fragment z filmu Chłopaki nie płaczą, kto wypowiedział ten tekst?"
     ]
   },
   {
-    "label": "Znane Cytaty",
+    "label": "18+",
     "color": "#ff1493",
     "questions": [
-      "Czyj to cytat: Do końca tak nie było. Córka zeżarła kostkę od kibla i trzeba było do szpitala jechać",
-      "Z jakiego filmu pochodzi cytat: Życie jest jak pudełko czekoladek, nigdy nie wiesz, co dostaniesz?"
+      "Jaki był najwyższy odnotowany poziom alkoholu we krwi w Polsce, przy którym osoba przeżyła? Dopuszczalny margines błędu: 0,5‰",
+      "Która gwiazda porno (lub osoba znana z branży dla dorosłych) ma najwięcej obserwujących na Instagramie?",
+      "Ile pieniędzy wydali Polacy łącznie na OnlyFans w 2025 roku? Można się pomylić o 5 mln dolarów"
     ]
   },
   {
-    "label": "Gry Komputerowe i Planszowe",
-    "color": "#32cd32",
-    "questions": [
-      "Z jakiej gry jest ta muzyka?",
-      "W jakiej grze komputerowej gracz wciela się w hydraulika ratującego księżniczkę?",
-      "Jak nazywa się główna bohaterka gry, która jest znana z noszenia krótkich szortów i białego topu?"
-    ]
-  },
-  {
-    "label": "Hity Muzyczne Lat 80., 90., 2000.",
+    "label": "Kiedyś było lepiej",
     "color": "#ff4500",
     "questions": [
-      "Kto wykonał przebój: I Will Always Love You",
-      "Jaka polska piosenka zaczyna się od tekstu: -Kaśka! Kaśka! -Przestań się drzeć, ja tu serial oglądam! -Może pani poprosić Kaśkę?",
-      "Jak brzmi tytuł piosenki, którą Edyta Górniak zaśpiewała na Konkursie Piosenki Eurowizji w 1994 roku?"
+      "Jak nazywał się pierwszy polski talent show emitowany w telewizji, który zadebiutował w 1993 roku?",
+      "Jakim domowym narzędziem najczęściej naprawiało się rozwiniętą kasetę magnetofonową?",
+      "Czym był “Pewex” oraz z czego zasłynął?"
     ]
   },
   {
     "label": "Kultura Internetu i Memów",
     "color": "#9370db",
     "questions": [
-      "Który film z 2004 roku stał się inspiracją do stworzenia mema: This is Sparta?",
-      "Jak brzmi słynny zwrot z mema, który stał się popularny dzięki serialowi The Office i jest używany, by nadać podtekst seksualny do niemal każdej wypowiedzi?"
+      "Ilu czarnoskórych mężczyzn stoi za blondynką na klasycznym memie pochodzącym ze sceny filmu dla dorosłych, w którym siedzi ona na kanapie?",
+      "W popularnych polskich memach o „Januszu” przedstawiana jest charakterystyczna małpa z długim, dziwnie ukształtowanym nosem. Jaki to gatunek?",
+      "Jaką farbą można pomalować amelinium?"
     ]
   },
   {
-    "label": "Zwierzęta i Przyroda",
-    "color": "#008080",
-    "questions": [
-      "Jakie zwierzęta potrafią latać, ale nie są ptakami, a ich skrzydła to tak naprawdę zmodyfikowane przednie nogi?",
-      "Jakie drzewo jest symbolem Japonii, znane z różowych kwiatów wiosną?",
-      "Więcej niż jedno zwierzę to..."
-    ]
-  },
-  {
-    "label": "Anatomia Człowieka",
-    "color": "#b22222",
-    "questions": [
-      "Jak nazywa się narząd odpowiedzialny za produkcję insuliny?",
-      "Jak nazywa się część ciała, która łączy kości w stawach?"
-    ]
-  },
-  {
-    "label": "Reklamy i Slogany",
-    "color": "#ff6347",
-    "questions": [
-      "Po jaki lek idziemy do Goździkowej?",
-      "Jaki slogan ma firma Red Bull?",
-      "W jakiej reklamie zobaczymy maślanego ludzika?"
-    ]
-  },
-  {
-    "label": "Kuchnia Polska",
+    "label": "Klasyka kina",
     "color": "#8b4513",
     "questions": [
-      "Jakie mięso jest tradycyjnie wykorzystywane w Bigosie?",
-      "Którą rybę Polacy najczęściej spożywają na surowo?",
-      "Jaki składnik jest głównym składnikiem zalewajki, którego nie znajdziemy w barszczu białym i żurku?"
+      "Podaj tytuł bajki po opisie: Historia o mężczyźnie zmagającym się z lękiem uogólnionym, który samotnie wychowuje dziecko. Pewnego dnia jego dziecko zostaje porwane i uwięzione w szklanym pojemniku wraz z obcymi dorosłymi. W trakcie poszukiwań ojciec poznaje kobietę z poważnymi zaburzeniami pamięci oraz objawami schizofrenii, następnie razem przemierzają świat, próbując odnaleźć zaginione dziecko",
+      "Podaj tytuł filmu po opisie: Historia artysty z pustym portfelem i uzależnieniem od hazardu, który trafia na wycieczke all-inclusive przez Atlantyk. Tam poznaje znudzoną dziedziczkę wraz z jej narzeczonym oraz rodziną. Para pomimo to przeżywa intensywny romans, oparty na pornografi, kradzieży auta i kłamstwie. Historia kończy się traumą kobiety oraz wyrzuceniu przez nią ok. 300 mln dolarów",
+      "Podaj tytuł filmu po opisie: Historia nastolatki, która zostaje zmuszona do przeprowadzki do ojca, ponieważ jej matka jest zbyt puszczalska i niedojrzała, by się nią zajmować. Dziewczyna trafia do ponurego miasteczka, gdzie poznaje dwóch skrajnie różnych mężczyzn: jednego ciepłego i opiekuńczego, który od dzieciństwa jest od niej uzależniony oraz drugiego, zimnego drania, który ją stalkuje i nawiedza po nocach. Bohaterka wybiera tego drugiego, co ostatecznie prowadzi do tego, że zostaje niemal śmiertelnie pobita przez znajomego"
+    ]
+  },
+  {
+    "label": "Alkoholanie!!!",
+    "color": "#228b22",
+    "questions": [
+      "Wymień 2 znaki drogowe, które Igor i Kacper przynieśli wracając w sukienkach z pochodniami ze stacji benzynowej.",
+      "Wymień 3 składniki drinka o nazwie 'Bob Budowniczy'.",
+      "Podaj przynajmniej jedną rasę psa sąsiada, którego oswoił Wojtek Kulesza podczas nocnej ucieczki z kostnicy.",
+      "Jaki trunek był serwowany nowo przybyłym gościom na Kostnicy?",
+      "Kto był pomysłodawcą wypadu po rynne do pustostanu?",
+      "Wymień 3 atrybuty jakie wyciągnął Igor z toalety podczas pierwszej imprezy na działce.",
+      "Jak się nazywała piosenka do której uczniowie klasy 2C tańczyli na uroczystości szkolnej Choinka?",
+      "Jakie zwierzę ukazało się Kacprowi na strzelnicy podczas popołudniowego powiedzenia?"
     ]
   }
 ]

@@ -19,9 +19,6 @@ const friction = 0.991; // Deceleration
 const wheelContainer = document.getElementById("wheel-container");
 const questionsContainer = document.getElementById("questions-container");
 
-// Get the current category index based on angle
-const getIndex = () => Math.floor(tot - (ang / TAU) * tot) % tot;
-
 // Draw each category on the wheel
 function drawCategory(category, i) {
   const angStart = arc * i;
@@ -44,13 +41,18 @@ function drawCategory(category, i) {
 }
 
 // Rotate canvas and update the displayed category
+const getIndex = () => {
+  if (tot === 0) return 0; // Prevent division by zero or errors
+  return Math.floor(tot - (ang / TAU) * tot) % tot;
+};
+
 function rotate() {
+  if (categories.length === 0) return; // Don't rotate if nothing exists
   const category = categories[getIndex()];
   ctx.canvas.style.transform = `rotate(${ang - Math.PI / 2}rad)`;
   spinEl.textContent = !angVel ? "Zakręć" : category.label;
   spinEl.style.background = category.color;
 }
-
 // Main animation loop for spinning
 function frame() {
   if (!angVel) return;
@@ -164,25 +166,45 @@ function displayQuestions() {
       });
 
       // Event listener for the question to return to the wheel and remove the question from the category's remaining questions
+      // Inside the questionEl click event listener:
       questionEl.addEventListener("click", () => {
-        // Remove the clicked question from the category's remaining questions
+        // Remove the clicked question
         category.remainingQuestions = category.remainingQuestions.filter(
           (q) => q !== question
         );
 
         questionContainer.remove();
 
-        // If no questions remain after removing, show the "Back to Wheel" button
+        // CHECK: If no questions remain, remove the category from the wheel
         if (category.remainingQuestions.length === 0) {
-          const backButton = document.createElement("button");
-          backButton.textContent = "Powrót do koła fortuny";
-          backButton.className = "back-button";
-          backButton.addEventListener("click", () => {
-            wheelContainer.style.display = "block";
-            questionsContainer.style.display = "none";
-          });
-          questionsContainer.appendChild(backButton);
+          // Remove category from global array
+          categories = categories.filter((c) => c.label !== category.label);
+
+          // Recalculate totals
+          tot = categories.length;
+          arc = tot > 0 ? TAU / tot : 0;
+
+          // Redraw the wheel to reflect the missing slice
+          ctx.clearRect(0, 0, dia, dia); // Clear the canvas
+          categories.forEach(drawCategory);
+
+          // Handle the UI state
+          if (tot === 0) {
+            questionsContainer.innerHTML =
+              "<h3>Wszystkie kategorie zostały ukończone!</h3>";
+          } else {
+            const backButton = document.createElement("button");
+            backButton.textContent = "Kategoria ukończona! Powrót do koła";
+            backButton.className = "back-button";
+            backButton.addEventListener("click", () => {
+              wheelContainer.style.display = "block";
+              questionsContainer.style.display = "none";
+              rotate(); // Update pointer/label position
+            });
+            questionsContainer.appendChild(backButton);
+          }
         } else {
+          // Standard return to wheel if questions still exist
           wheelContainer.style.display = "block";
           questionsContainer.style.display = "none";
         }
